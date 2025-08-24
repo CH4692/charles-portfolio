@@ -6,15 +6,17 @@ import MenuIcon from "./MenuIcon";
 import MenuModal from "./MenuModal";
 import { useState } from "react";
 import CtaButton from "./CtaButton";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const MenuItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  const segment = useSelectedLayoutSegment();
   function showMenuModalHandler() {
     setIsOpen((prev) => !prev);
   }
   return (
-    <header className="sticky top-0 min-h-20 h-20 border-b-1 border-border bg-background opacity-95 shadow-2xl">
+    <header className="sticky top-0 min-h-20 md:h-20 border-b-1 border-border bg-background opacity-95 shadow-2xl">
       <nav
         aria-label="Hauptnavigation"
         className="flex h-full justify-between p-9 items-center"
@@ -34,7 +36,9 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
-      {isOpen && <MenuModal menuNames={MenuItems} />}
+      <div className="px-9">
+        {isOpen && <MenuModal menuNames={MenuItems} />}
+      </div>
     </header>
   );
 }

@@ -2,7 +2,7 @@ import NavButton from "./NavButton";
 
 export default function MenuModal({ menuNames }: { menuNames: string[] }) {
   return (
-    <ul className="block bg-card border-1 border-border rounded-xl mt-6 p-4 visible md:hidden">
+    <ul className="block bg-card border-1 border-border rounded-xl p-4 mb-4 visible md:hidden">
       {menuNames.map((name) => (
         <li
           key={name}
