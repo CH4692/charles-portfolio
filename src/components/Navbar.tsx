@@ -1,24 +1,31 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import NavButton from "./NavButton";
 
 export default function Navbar() {
   return (
-    <header>
-      <nav aria-label="Hauptnavigation">
+    <header className="sticky top-0 ">
+      <nav
+        aria-label="Hauptnavigation"
+        className="flex justify-between items-center h-20 border-b-1 border-secondary p-8 bg-background opacity-90 shadow-2xl"
+      >
         <Logo />
-        <div>
-          <ul className="list-none m-0 p-0 overflow-hidden">
-            <li>
-              <Link href="/home">Home</Link>
+        <div className="w-xl h-auto ">
+          <ul className="w-full h-full px-9 list-none overflow-hidden flex justify-between items-center">
+            <li className="">
+              <NavButton>Home</NavButton>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <NavButton>About</NavButton>
             </li>
             <li>
-              <Link href="/skills">Projekts</Link>
+              <NavButton>Skills</NavButton>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <NavButton>Projects</NavButton>
+            </li>
+            <li>
+              <NavButton>Contact</NavButton>
             </li>
             <li>
               <button>Get In Touch</button>

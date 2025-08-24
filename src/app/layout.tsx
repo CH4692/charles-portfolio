@@ -9,14 +9,29 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  about,
+  home,
+  projects,
+  skills,
+  contacts,
 }: Readonly<{
   children: React.ReactNode;
+  about: React.ReactNode;
+  home: React.ReactNode;
+  projects: React.ReactNode;
+  skills: React.ReactNode;
+  contacts: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className="p-8">
+      <body className="">
         <Navbar />
-        <main>{children}</main>
+        {/* <main>{children}</main> */}
+        {home}
+        {about}
+        {skills}
+        {projects}
+        {contacts}
       </body>
     </html>
   );
