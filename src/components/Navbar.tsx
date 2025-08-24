@@ -1,38 +1,40 @@
-import Link from "next/link";
+"use client";
+
 import Logo from "@/components/Logo";
 import NavButton from "./NavButton";
+import MenuIcon from "./MenuIcon";
+import MenuModal from "./MenuModal";
+import { useState } from "react";
+import CtaButton from "./CtaButton";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const MenuItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  function showMenuModalHandler() {
+    setIsOpen((prev) => !prev);
+  }
   return (
-    <header className="sticky top-0 ">
+    <header className="sticky top-0 min-h-20 h-20 border-b-1 border-border bg-background opacity-95 shadow-2xl">
       <nav
         aria-label="Hauptnavigation"
-        className="flex justify-between items-center h-20 border-b-1 border-secondary p-8 bg-background opacity-90 shadow-2xl"
+        className="flex h-full justify-between p-9 items-center"
       >
-        <Logo />
-        <div className="w-xl h-auto ">
-          <ul className="w-full h-full px-9 list-none overflow-hidden flex justify-between items-center">
-            <li className="">
-              <NavButton>Home</NavButton>
-            </li>
+        <Logo width={39} height={39} />
+        <MenuIcon isOpen={isOpen} setIsOpen={showMenuModalHandler} />
+        <div className="w-lg h-full hidden md:block">
+          <ul className="w-full h-full list-none flex justify-between items-center ">
+            {MenuItems.map((menu) => (
+              <li key={menu}>
+                <NavButton>{menu}</NavButton>
+              </li>
+            ))}
             <li>
-              <NavButton>About</NavButton>
-            </li>
-            <li>
-              <NavButton>Skills</NavButton>
-            </li>
-            <li>
-              <NavButton>Projects</NavButton>
-            </li>
-            <li>
-              <NavButton>Contact</NavButton>
-            </li>
-            <li>
-              <button>Get In Touch</button>
+              <CtaButton name="Get In Touch" />
             </li>
           </ul>
         </div>
       </nav>
+      {isOpen && <MenuModal menuNames={MenuItems} />}
     </header>
   );
 }

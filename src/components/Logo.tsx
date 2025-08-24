@@ -1,14 +1,20 @@
 import Image from "next/image";
 
-export default function Logo() {
+export default function Logo({
+  width,
+  height,
+}: {
+  width: number;
+  height: number;
+}) {
   return (
     <div>
       <Image
         alt="Logo"
-        width={48}
-        height={48}
-        className="transition duration-300 ease-in-out hover:scale-115 "
-        src="/brand/Logo_standard.png"
+        width={width}
+        height={height}
+        className="transition duration-300 ease-in-out hover:scale-115 cursor-pointer"
+        src="/brand/Logo_standard2.png"
       />
     </div>
   );

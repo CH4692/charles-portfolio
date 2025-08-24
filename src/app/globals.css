@@ -8,10 +8,15 @@
 @theme {
   --color-background: #0d1116;
   --color-foreground: #f2f2f2;
-  --color-primary: #00c8c7;
+  --color-primary: #03ffff;
   --color-secondary: #1e2a47;
   --color-white: #f2f2f2;
   --color-cool-grey: #b3b3b3;
+  --color-border: #27303f;
+  --color-card: #161a23;
+  --color-cta-grad-start: #03fdfc;
+  --color-cta-grad-end: #349b9b;
+  --color-cv-btn: #111318;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
@@ -30,6 +35,8 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    height: 100%;
+    width: 100%;
   }
 }
 
