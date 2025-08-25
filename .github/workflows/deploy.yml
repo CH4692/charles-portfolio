@@ -1,5 +1,5 @@
-# .github/workflows/ci.yml
 name: CI
+
 on:
   push:
     branches: [main, preview]
@@ -18,13 +18,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - name: Install deps
         run: npm ci
@@ -37,7 +40,7 @@ jobs:
       - name: Build (Next)
         run: npm run build
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
@@ -50,31 +53,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 14
-
-  deploy:
-    needs: test
-    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/preview' }}
-    runs-on: ubuntu-latest
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci
-
-      # 1) Projekt-/Env-Settings von Vercel ziehen
-      - name: Vercel pull
-        run: npx -y vercel@46 pull --yes --environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
-
-      # 2) Lokalen Build erzeugen (.vercel/output)
-      - name: Vercel build
-        run: npx -y vercel@46 build
-
-      # 3) Prebuilt deployen
-      - name: Vercel deploy (prebuilt)
-        run: npx -y vercel@46 deploy --prebuilt ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
