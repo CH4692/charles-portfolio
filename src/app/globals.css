@@ -70,7 +70,7 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth; /* sanftes Scrollen */
+  scroll-behavior: auto;
 }
 
 h1 {
