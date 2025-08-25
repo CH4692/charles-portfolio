@@ -1,42 +1,42 @@
-import CtaButton from "@/components/CtaButton";
-import CvButton from "@/components/CvButton";
-import PulsingBackground from "@/components/PulsingBackground";
-import { Download, MoveDown } from "lucide-react";
-import Image from "next/image";
+import { Download, MoveDown } from 'lucide-react';
+import Image from 'next/image';
+
+import CtaButton from '@/components/CtaButton';
+import CvButton from '@/components/CvButton';
+import PulsingBackground from '@/components/PulsingBackground';
 
 export default function Home() {
   return (
     <>
       <PulsingBackground />
-      <section className="h-screen w-auto flex flex-col items-center">
+      <section
+        id="home"
+        className="flex min-h-[calc(100dvh-5rem)] w-auto scroll-mt-20 flex-col items-center"
+      >
         <Image
           alt="Logo"
-          width={160}
-          height={160}
+          width={100}
+          height={100}
           src="/brand/Logo_standard2.png"
-          className="mt-8"
+          className="mt-8 sm:size-32 md:size-36 lg:size-40"
         />
-        <div className="justify-center mt-15">
-          <h1 className="font-sans text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Hi, I’m{" "}
-            <span className="bg-gradient-to-br from-primary to-cta-grad-end text-transparent bg-clip-text">
+        <div className="mt-15 justify-center">
+          <h1 className="font-sans text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            Hi, I’m{' '}
+            <span className="from-primary to-cta-grad-end bg-gradient-to-br bg-clip-text text-transparent">
               Charles Heller
             </span>
           </h1>
-          <h2 className="text-center mt-6 text-xl md:text-3xl lg:text-4xl font-bold text-cool-grey text-muted-foreground">
+          <h2 className="text-cool-grey text-muted-foreground mt-6 text-center text-xl font-bold md:text-3xl lg:text-4xl">
             Developer & Quality Engineer
           </h2>
-          <p className="text-center text-balance mt-6  text-md sm:2xl lg:text-2xl max-h-15 max-w-2xl text-cool-grey text-muted-foreground">
-            Building robust applications and ensuring quality through
-            comprehensive development and engineering strategies
+          <p className="text-md sm:2xl text-cool-grey text-muted-foreground mt-6 max-h-15 max-w-2xl text-center text-balance lg:text-2xl">
+            Building robust applications and ensuring quality through comprehensive development and
+            engineering strategies
           </p>
         </div>
-        <div className="mt-10 flex justify-between gap-4">
-          <CtaButton
-            name="View My Work"
-            addClass="flex gap-1"
-            icon={<MoveDown />}
-          ></CtaButton>
+        <div className="mt-10 flex flex-col justify-between gap-4 md:flex-row">
+          <CtaButton name="View My Work" addClass="flex gap-1" icon={<MoveDown />}></CtaButton>
           <CvButton name="Download CV" icon={<Download />} />
         </div>
       </section>

@@ -1,43 +1,47 @@
-"use client";
+'use client';
 
-import Logo from "@/components/Logo";
-import NavButton from "./NavButton";
-import MenuIcon from "./MenuIcon";
-import MenuModal from "./MenuModal";
-import { useState } from "react";
-import CtaButton from "./CtaButton";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useState } from 'react';
+
+import Logo from '@/components/Logo';
+
+import CtaButton from './CtaButton';
+import GetInTouchButton from './GetInTouchButton';
+import MenuIcon from './MenuIcon';
+import MenuModal from './MenuModal';
+import NavButton from './NavButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const MenuItems = ["Home", "About", "Skills", "Projects", "Contact"];
-  const segment = useSelectedLayoutSegment();
+  const MenuItems = ['Home', 'About', 'Skills', 'Projects'];
+  function onClickeHandler(e: React.MouseEvent<HTMLButtonElement>) {
+    const nav = e.currentTarget.innerText;
+    const navEl = document.getElementById(nav.toLowerCase());
+    navEl?.scrollIntoView();
+    setIsOpen(false);
+  }
   function showMenuModalHandler() {
     setIsOpen((prev) => !prev);
   }
   return (
-    <header className="sticky top-0 min-h-20 md:h-20 border-b-1 border-border bg-background opacity-95 shadow-2xl">
-      <nav
-        aria-label="Hauptnavigation"
-        className="flex h-full justify-between p-9 items-center"
-      >
+    <header className="border-border bg-background sticky top-0 min-h-20 border-b-1 opacity-95 shadow-2xl md:h-20">
+      <nav aria-label="Hauptnavigation" className="flex h-full items-center justify-between p-9">
         <Logo width={39} height={39} />
         <MenuIcon isOpen={isOpen} setIsOpen={showMenuModalHandler} />
-        <div className="w-lg h-full hidden md:block">
-          <ul className="w-full h-full list-none flex justify-between items-center ">
+        <div className="hidden h-full w-lg md:block">
+          <ul className="flex h-full w-full list-none items-center justify-between">
             {MenuItems.map((menu) => (
               <li key={menu}>
-                <NavButton>{menu}</NavButton>
+                <NavButton onClick={onClickeHandler}>{menu}</NavButton>
               </li>
             ))}
             <li>
-              <CtaButton name="Get In Touch" />
+              <GetInTouchButton name="Get In Touch" />
             </li>
           </ul>
         </div>
       </nav>
       <div className="px-9">
-        {isOpen && <MenuModal menuNames={MenuItems} />}
+        {isOpen && <MenuModal onClick={onClickeHandler} menuNames={MenuItems} />}
       </div>
     </header>
   );

@@ -1,7 +1,12 @@
+import Title from '@/components/Title';
+
 export default function Skills() {
   return (
-    <section className="h-screen w-auto">
-      <h1>Skills</h1>
+    <section
+      id="skills"
+      className="from-sec-gra-start to-background flex min-h-[calc(100dvh-5rem)] w-auto scroll-mt-20 justify-center bg-linear-to-br"
+    >
+      <Title>My Skills</Title>
     </section>
   );
 }

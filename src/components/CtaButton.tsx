@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export default function CtaButton({
   name,
@@ -11,7 +11,7 @@ export default function CtaButton({
 }) {
   return (
     <button
-      className={`text-background px-5 py-2 font-medium transition duration-400 ease-in-out cursor-pointer hover:scale-105  shadow-2xl/70 hover:shadow-primary bg-gradient-to-br from-primary to-cta-grad-end rounded-lg ${addClass}`}
+      className={`text-background hover:shadow-primary from-primary to-cta-grad-end cursor-pointer rounded-lg bg-gradient-to-br px-5 py-2 font-medium shadow-2xl/70 transition duration-400 ease-in-out hover:scale-105 ${addClass}`}
     >
       {name}
       {icon}

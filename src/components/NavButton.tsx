@@ -1,8 +1,15 @@
-export default function NavButton({ children }: { children: string }) {
+export default function NavButton({
+  children,
+  onClick,
+}: {
+  children: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}) {
   return (
     <button
-      className="text-white h-full font-medium transition duration-400 ease-in-out hover:font-semibold hover:scale-110 hover:text-primary cursor-pointer"
+      className="hover:text-primary h-full cursor-pointer font-medium text-white transition duration-400 ease-in-out hover:scale-110 hover:font-semibold"
       type="button"
+      onClick={onClick}
     >
       {children}
     </button>

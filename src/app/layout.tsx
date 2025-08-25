@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
+import './globals.css';
+
+import type { Metadata } from 'next';
+
+import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: "Charles Heller",
-  description: "Portfolio Website of Charles Heller",
+  title: 'Charles Heller',
+  description: 'Portfolio Website of Charles Heller',
 };
 
 export default function RootLayout({
-  children,
   about,
   home,
   projects,
@@ -23,7 +24,7 @@ export default function RootLayout({
   contacts: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>
         <Navbar />
         {home}
