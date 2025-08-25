@@ -10,7 +10,7 @@ export default function GetInTouchButton({
   addClass?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }) {
-  function onClickeHandler(e: React.MouseEvent<HTMLButtonElement>) {
+  function onClickeHandler() {
     const navEl = document.getElementById('contact');
     navEl?.scrollIntoView();
   }

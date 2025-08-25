@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import Logo from '@/components/Logo';
 
-import CtaButton from './CtaButton';
 import GetInTouchButton from './GetInTouchButton';
 import MenuIcon from './MenuIcon';
 import MenuModal from './MenuModal';
