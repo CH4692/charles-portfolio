@@ -65,36 +65,16 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-
       - run: npm ci
 
-      # Projekt-/Env-Settings von Vercel ziehen (inkl. Environment Variables)
+      # 1) Projekt-/Env-Settings von Vercel ziehen
       - name: Vercel pull
-        run: |
-          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            npx vercel@latest pull --yes --environment=production --token "$VERCEL_TOKEN"
-          else
-            npx vercel@latest pull --yes --environment=preview --token "$VERCEL_TOKEN"
-          fi
+        run: npx -y vercel@46 pull --yes --environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
 
-      - name: Build (Next)
-        run: npm run build
+      # 2) Lokalen Build erzeugen (.vercel/output)
+      - name: Vercel build
+        run: npx -y vercel@46 build
 
-      # Prebuilt-Deployment mit Retries (fängt ETIMEDOUT ab)
-      - name: Deploy to Vercel
-        id: vercel-deploy
-        run: |
-          tries=0
-          until [ $tries -ge 3 ]
-          do
-            if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-              npx vercel@latest deploy --prebuilt --prod --token "$VERCEL_TOKEN" && break
-            else
-              npx vercel@latest deploy --prebuilt --token "$VERCEL_TOKEN" && break
-            fi
-            tries=$((tries+1))
-            sleep $((tries*10))
-          done
-          if [ $tries -ge 3 ]; then
-            echo "Vercel deploy failed after retries"; exit 1
-          fi
+      # 3) Prebuilt deployen
+      - name: Vercel deploy (prebuilt)
+        run: npx -y vercel@46 deploy --prebuilt ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
