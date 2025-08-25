@@ -11,7 +11,7 @@ export default function Home() {
       <PulsingBackground />
       <section
         id="home"
-        className="flex min-h-[calc(100dvh-5rem)] w-auto scroll-mt-20 flex-col items-center"
+        className="mt-[var(--header-h)] flex min-h-[calc(100dvh-var(--header-h))] w-auto scroll-mt-[var(--header-h)] flex-col items-center pt-14 md:pt-0"
       >
         <Image
           alt="Logo"

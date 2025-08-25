@@ -12,7 +12,7 @@ export default function GetInTouchButton({
 }) {
   function onClickeHandler() {
     const navEl = document.getElementById('contact');
-    navEl?.scrollIntoView();
+    navEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   return (
     <button
