@@ -25,13 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body>
+      <body className="">
         <Navbar />
-        {home}
-        {about}
-        {skills}
-        {projects}
-        {contacts}
+        <main className="pt-[var(--header-h)]">
+          {home}
+          {about}
+          {skills}
+          {projects}
+          {contacts}
+        </main>
       </body>
     </html>
   );

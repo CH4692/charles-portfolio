@@ -71,9 +71,21 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth; /* sanftes Scrollen */
-  scroll-padding-top: var(--header-h);
 }
 
 h1 {
   text-align: center;
+}
+
+/* nur Opazität/Blur – keine scale-Transforms nötig */
+@keyframes pulseOpacity {
+  0%,
+  100% {
+    opacity: var(--alpha-min, 0.18);
+    filter: blur(var(--blur-min, 24px));
+  }
+  50% {
+    opacity: var(--alpha-max, 0.38);
+    filter: blur(var(--blur-max, 36px));
+  }
 }

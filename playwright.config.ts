@@ -51,14 +51,17 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: ['tests/shared/**/*.test.ts', 'tests/desktop/**/*.test.ts'],
     },
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      testMatch: ['tests/shared/**/*.test.ts', 'tests/desktop/**/*.test.ts'],
     },
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      testMatch: ['tests/shared/**/*.test.ts', 'tests/desktop/**/*.test.ts'],
     },
 
     /* Test against mobile viewports. */
@@ -66,10 +69,11 @@ export default defineConfig({
     //   name: 'Mobile Chrome',
     //   use: { ...devices['Pixel 5'] },
     // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 13 Pro'] },
+      testMatch: ['tests/shared/**/*.test.ts', 'tests/mobile/**/*.test.ts'],
+    },
 
     /* Test against branded browsers. */
     // {

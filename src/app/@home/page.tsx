@@ -11,14 +11,14 @@ export default function Home() {
       <PulsingBackground />
       <section
         id="home"
-        className="mt-[var(--header-h)] flex min-h-[calc(100dvh-var(--header-h))] w-auto scroll-mt-[var(--header-h)] flex-col items-center pt-14 md:pt-0"
+        className="flex min-h-[calc(100dvh-var(--header-h))] w-full scroll-mt-[var(--header-h)] flex-col items-center justify-center"
       >
         <Image
           alt="Logo"
           width={100}
           height={100}
           src="/brand/Logo_standard2.png"
-          className="mt-8 sm:size-32 md:size-36 lg:size-40"
+          className="sm:size-32 md:size-36 lg:size-40"
         />
         <div className="mt-15 justify-center">
           <h1 className="font-sans text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">

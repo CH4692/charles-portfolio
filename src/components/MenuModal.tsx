@@ -25,10 +25,11 @@ export default function MenuModal({
         </li>
       ))}
 
-      <li className="bg-card border-primary hover:shadow-primary mt-2 h-12 cursor-pointer rounded-xl border-1 text-center shadow-xl/20 transition ease-in-out hover:scale-103">
-        <button onClick={onClickeHandler} className="h-full cursor-pointer text-center">
-          Get In Touch
-        </button>
+      <li
+        onClick={onClickeHandler}
+        className="bg-card border-primary hover:shadow-primary mt-2 h-12 cursor-pointer rounded-xl border-1 text-center shadow-xl/20 transition ease-in-out hover:scale-103"
+      >
+        <button className="h-full cursor-pointer text-center">Get In Touch</button>
       </li>
     </ul>
   );

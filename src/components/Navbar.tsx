@@ -22,7 +22,7 @@ export default function Navbar() {
     setIsOpen((prev) => !prev);
   }
   return (
-    <header className="border-border bg-background fixed inset-x-0 top-0 z-50 min-h-[var(--header-h)] border-b-1 opacity-95 shadow-2xl md:h-20">
+    <header className="border-border bg-background fixed inset-x-0 top-0 z-50 h-[var(--header-h)] min-h-[var(--header-h)] border-b-1 opacity-95 shadow-2xl">
       <nav aria-label="Hauptnavigation" className="flex h-full items-center justify-between p-9">
         <Logo width={39} height={39} />
         <MenuIcon isOpen={isOpen} setIsOpen={showMenuModalHandler} />
