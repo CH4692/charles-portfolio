@@ -34,13 +34,13 @@ export default defineConfig({
   },
   webServer: process.env.CI
     ? {
-        command: 'npm run start -p 3000', // Prod-Server in CI
+        command: 'npm run start -- -p 3000', // Prod-Server in CI
         url: 'http://localhost:3000',
         reuseExistingServer: false,
         timeout: 120_000,
       }
     : {
-        command: 'npm run dev -p 3000', // Dev-Server lokal
+        command: 'npm run dev -- -p 3000', // Dev-Server lokal
         url: 'http://localhost:3000',
         reuseExistingServer: true, // wenn du `npm run dev` schon offen hast, wird der wiederverwendet
         timeout: 120_000,
