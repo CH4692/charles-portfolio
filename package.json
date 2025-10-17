@@ -1,6 +1,6 @@
 {
   "name": "charles-portfolio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -14,7 +14,7 @@
     "test:ui": "npx playwright test --ui",
     "report": " npx playwright show-report",
     "prepare": "husky",
-    "release": "standard-version"
+    "release": "standard-version && it push --follow-tags origin preview"
   },
   "dependencies": {
     "lucide-react": "^0.541.0",
