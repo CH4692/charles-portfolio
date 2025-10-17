@@ -8,8 +8,22 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import prettier from 'eslint-config-prettier';
 
+// Hilfsfunktion: macht die type-aware TS-Configs nur für TS/TSX gültig
+const typeAwareForTsOnly = tseslint.configs.recommendedTypeChecked.map((cfg) => ({
+  ...cfg,
+  files: ['**/*.{ts,tsx}'],
+  languageOptions: {
+    ...cfg.languageOptions,
+    parserOptions: {
+      ...(cfg.languageOptions?.parserOptions ?? {}),
+      project: ['./tsconfig.eslint.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+}));
+
 export default [
-  // Ignorieren (wichtig: auch die eigenen Configs)
+  // --- Ignorieren (auch commitlint!) ---
   {
     ignores: [
       'node_modules/**',
@@ -21,29 +35,28 @@ export default [
       '**/*.d.ts',
       'eslint.config.mjs',
       'postcss.config.mjs',
+      'commitlint.config.cjs',
+      '**/*.config.*',
+      '**/*.cjs',
     ],
   },
 
-  // JS/JSX (kein TS-Parser hier!)
+  // --- JS/JSX Basis ---
   {
     files: ['**/*.{js,jsx,mjs,cjs}'],
     ...js.configs.recommended,
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
 
-  // TypeScript: Basis (nicht type-aware)
+  // --- TS (nicht type-aware) ---
   ...tseslint.configs.recommended,
 
-  // TypeScript: type-aware nur für TS/TSX
-  ...tseslint.config(...tseslint.configs.recommendedTypeChecked, {
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.eslint.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      globals: { ...globals.browser, ...globals.node },
-    },
+  // --- TS (type-aware) NUR für TS/TSX + mit project ---
+  ...typeAwareForTsOnly,
+
+  // --- Next / Plugins / Regeln ---
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
     plugins: {
       '@next/next': nextPlugin,
       'react-hooks': reactHooks,
@@ -62,12 +75,15 @@ export default [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
 
-      // TS: praxisfreundlich
+      // TS Praxis
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/unbound-method': 'off', // optional: sonst oft noisy in FKs
+      '@typescript-eslint/unbound-method': 'off',
     },
-  }),
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
 
-  // Prettier-Kompat
+  // --- Prettier am Ende ---
   prettier,
 ];
