@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/CH4692/charles-portfolio/compare/v0.1.7...v0.1.8) (2025-10-17)
+
+### Bug Fixes
+
+- changelog process ([bf4f1ce](https://github.com/CH4692/charles-portfolio/commit/bf4f1ceada33cd474ab1ce9e5db31cc9b238ed2a))
+
 ### [0.1.7](https://github.com/CH4692/charles-portfolio/compare/v0.1.5...v0.1.7) (2025-10-17)
 
 ### Bug Fixes
