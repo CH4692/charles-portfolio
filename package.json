@@ -14,7 +14,7 @@
     "test:ui": "npx playwright test --ui",
     "report": " npx playwright show-report",
     "prepare": "husky",
-    "release": "standard-version && git push --follow-tags"
+    "release": "standard-version && git push --follow-tags && git push"
   },
   "dependencies": {
     "lucide-react": "^0.541.0",
