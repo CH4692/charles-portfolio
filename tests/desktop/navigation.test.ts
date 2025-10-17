@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('Logo Link', async ({ page }) => {
   await page.goto('/');
-  await page.mouse.wheel(0, 500);
+  await page.getByRole('button', { name: 'Contact Me' }).click();
   await page.getByRole('link', { name: 'Logo' }).click();
   await expect(page.getByRole('heading', { name: 'Charles Heller' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Charles Heller' })).toBeInViewport();
