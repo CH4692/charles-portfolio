@@ -10,10 +10,10 @@ export default function Home() {
         className="flex min-h-[calc(100dvh-var(--header-h))] w-full max-w-xs scroll-mt-[var(--header-h)] flex-col justify-center gap-16 sm:max-w-full sm:flex-row sm:justify-normal"
       >
         <div className="mt-8 pl-9 text-left sm:mt-50">
-          <h1 className="to-cta-grad-end from-cta-grad-start bg-gradient-to-r bg-clip-text text-left text-2xl text-transparent sm:text-7xl">
+          <h1 className="to-cta-grad-end from-cta-grad-start bg-gradient-to-r bg-clip-text text-left text-4xl text-transparent sm:text-7xl">
             Charles Heller
           </h1>
-          <h2 className="text-xl sm:text-7xl">Fullstack Developer</h2>
+          <h2 className="text-2xl sm:text-7xl">Fullstack Developer</h2>
           <p className="text-cool-grey mt-8 mb-12 max-w-xl">
             I design, build, and test modern web applications with a strong focus on
             <strong> quality</strong>,<strong> automation</strong>, and

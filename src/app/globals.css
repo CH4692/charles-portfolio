@@ -73,6 +73,17 @@ html {
   scroll-behavior: auto;
 }
 
+section {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* nur Opazität/Blur – keine scale-Transforms nötig */
 @keyframes pulseOpacity {
   0%,
