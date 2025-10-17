@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Schnellchecks vor jedem Commit
 npm test
 npm run typecheck
