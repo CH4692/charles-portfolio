@@ -73,10 +73,6 @@ html {
   scroll-behavior: auto;
 }
 
-h1 {
-  text-align: center;
-}
-
 /* nur Opazität/Blur – keine scale-Transforms nötig */
 @keyframes pulseOpacity {
   0%,

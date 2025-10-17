@@ -31,3 +31,10 @@ test('navigate to contact section', async ({ page }) => {
   await expect(page.locator('#contact')).toBeVisible();
   await expect(page.locator('#contact')).toBeInViewport();
 });
+
+test('Contact Me Button', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Contact Me' }).click();
+  await expect(page.locator('#contact')).toBeVisible();
+  await expect(page.locator('#contact')).toBeInViewport();
+});

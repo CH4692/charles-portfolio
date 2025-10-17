@@ -23,3 +23,9 @@ test('apple-touch-icon.png is visible', async ({ page }) => {
   await page.goto('/apple-touch-icon.png');
   await expect(img).toBeVisible();
 });
+
+test('me.png is visible', async ({ page }) => {
+  const img = page.getByRole('img');
+  await page.goto('/me.png');
+  await expect(img).toBeVisible();
+});

@@ -1,43 +1,35 @@
-import { Download, MoveDown } from 'lucide-react';
 import Image from 'next/image';
 
 import CtaButton from '@/components/CtaButton';
-import CvButton from '@/components/CvButton';
-import PulsingBackground from '@/components/PulsingBackground';
 
 export default function Home() {
   return (
     <>
-      <PulsingBackground />
       <section
         id="home"
-        className="flex min-h-[calc(100dvh-var(--header-h))] w-full scroll-mt-[var(--header-h)] flex-col items-center justify-center"
+        className="flex min-h-[calc(100dvh-var(--header-h))] w-full max-w-xs scroll-mt-[var(--header-h)] flex-col justify-center gap-16 sm:max-w-full sm:flex-row sm:justify-normal"
       >
-        <Image
-          alt="Logo"
-          width={100}
-          height={100}
-          src="/brand/Logo_standard2.png"
-          className="sm:size-32 md:size-36 lg:size-40"
-        />
-        <div className="mt-15 justify-center">
-          <h1 className="font-sans text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-            Hi, I’m{' '}
-            <span className="from-primary to-cta-grad-end bg-gradient-to-br bg-clip-text text-transparent">
-              Charles Heller
-            </span>
+        <div className="mt-8 pl-9 text-left sm:mt-50">
+          <h1 className="to-cta-grad-end from-cta-grad-start bg-gradient-to-r bg-clip-text text-left text-2xl text-transparent sm:text-7xl">
+            Charles Heller
           </h1>
-          <h2 className="text-cool-grey text-muted-foreground mt-6 text-center text-xl font-bold md:text-3xl lg:text-4xl">
-            Developer & Quality Engineer
-          </h2>
-          <p className="text-md sm:2xl text-cool-grey text-muted-foreground mt-6 max-h-15 max-w-2xl text-center text-balance lg:text-2xl">
-            Building robust applications and ensuring quality through comprehensive development and
-            engineering strategies
+          <h2 className="text-xl sm:text-7xl">Fullstack Developer</h2>
+          <p className="text-cool-grey mt-8 mb-12 max-w-xl">
+            I design, build, and test modern web applications with a strong focus on
+            <strong> quality</strong>,<strong> automation</strong>, and
+            <strong> user experience</strong>. With hands-on experience in frontend and backend
+            development, I create reliable systems that look great and perform even better.
           </p>
+          <CtaButton addClass="w-full sm:w-xs" name="Contact Me" />
         </div>
-        <div className="mt-10 flex flex-col justify-between gap-4 md:flex-row">
-          <CtaButton name="View My Work" addClass="flex gap-1" icon={<MoveDown />}></CtaButton>
-          <CvButton name="Download CV" icon={<Download />} />
+        <div className="absolute -z-100 sm:static">
+          <Image
+            src="/me.png"
+            alt="Me"
+            width={652}
+            height={977}
+            className="opacity-30 sm:opacity-100"
+          />
         </div>
       </section>
     </>
