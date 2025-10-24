@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="">
         <Navbar />
-        <main className="pt-[var(--header-h)]">
+        <main className="px-9 pt-[var(--header-h)]">
           {home}
           {about}
           {skills}

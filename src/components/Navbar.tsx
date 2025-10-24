@@ -39,7 +39,7 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
-      <div className="px-9">
+      <div className="">
         {isOpen && (
           <MenuModal
             setIsOpen={showMenuModalHandler}
