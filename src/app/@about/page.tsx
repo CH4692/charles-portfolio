@@ -1,4 +1,4 @@
-import { Briefcase, Code, Layers, Rocket,TestTube, Workflow } from 'lucide-react';
+import { Briefcase, Code, Layers, Rocket, TestTube, Workflow } from 'lucide-react';
 
 import Title from '@/components/Title';
 

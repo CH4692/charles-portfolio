@@ -1,4 +1,4 @@
-import { Code, Cpu,Database, Layers, TestTube, Workflow } from 'lucide-react';
+import { Code, Cpu, Database, Layers, TestTube, Workflow } from 'lucide-react';
 
 import Title from '@/components/Title';
 
