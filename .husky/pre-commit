@@ -1,0 +1,5 @@
+# Schnellchecks vor jedem Commit
+npm test
+npm run typecheck
+npx lint-staged
+npm run format

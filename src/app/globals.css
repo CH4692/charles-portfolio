@@ -1,26 +1,98 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-background);
+  --foreground: var(--color-white);
+  --header-h: var(--nav-h);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-background: #0d1116;
+  --color-foreground: #f2f2f2;
+  --color-primary: #03ffff;
+  --color-secondary: #1e2a47;
+  --color-white: #f2f2f2;
+  --color-cool-grey: #b3b3b3;
+  --color-border: #27303f;
+  --color-card: #161a23;
+  --color-cta-grad-start: #03fdfc;
+  --color-cta-grad-end: #349b9b;
+  --color-animate: #27d3d4;
+  --color-cv-btn: #111318;
+  --color-sec-gra-start: #12141b;
+  --color-sec-gra-end: #11131a;
+  --nav-h: 5rem;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
+    'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji', sans-serif;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    background-color: (var(--color-primary));
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background-color: (var(--color-primary));
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: (var(--color-primary));
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: (var(--color-primary));
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: var(--color-background);
     --foreground: #ededed;
   }
 }
 
+@layer base {
+  html {
+    font-feature-settings:
+      'kern' 1,
+      'liga' 1;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+section {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* nur Opazität/Blur – keine scale-Transforms nötig */
+@keyframes pulseOpacity {
+  0%,
+  100% {
+    opacity: var(--alpha-min, 0.18);
+    filter: blur(var(--blur-min, 24px));
+  }
+  50% {
+    opacity: var(--alpha-max, 0.38);
+    filter: blur(var(--blur-max, 36px));
+  }
 }
