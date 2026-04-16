@@ -24,7 +24,7 @@ test('navigate to skills section', async ({ page }) => {
 
 test('navigate to projects section', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Projects' }).click();
+  await page.getByRole('button', { name: 'Projects', exact: true }).click();
   await expect(page.locator('#projects')).toBeVisible();
   await expect(page.locator('#projects')).toBeInViewport();
 });
