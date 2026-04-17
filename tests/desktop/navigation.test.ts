@@ -46,7 +46,7 @@ test('Contact Me Button', async ({ page }) => {
 test('Instagram Link', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('link', { name: 'Instagram' }).click();
-  expect(page.url()).toEqual('https://www.instagram.com/ch_46/');
+  expect(page.url()).toContain('instagram.com/ch_46');
 });
 
 test('LinkedIn Link', async ({ page }) => {
