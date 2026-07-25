@@ -1,18 +1,16 @@
-# 🌐 Charles Heller – Portfolio
+# Charles Heller – Portfolio
 
-Personal portfolio website showcasing my work as a **QA Automation Engineer** and **Fullstack Developer**.
-
----
-
-## 🚀 About
-
-This portfolio highlights my experience in **test automation**, **quality engineering**, and **modern web development**.
-
-It includes selected projects demonstrating my work with Playwright, Selenium, and modern frontend technologies.
+Personal portfolio of a **Quality-Driven Software Engineer** — modern web delivery with enterprise QA depth.
 
 ---
 
-## 🛠 Tech Stack
+## About
+
+This site positions Charles Heller as an engineer who ships reliable web applications and designs quality into the product from day one: testing, architecture, automation, and maintainability.
+
+---
+
+## Tech Stack
 
 - Next.js
 - React
@@ -21,43 +19,37 @@ It includes selected projects demonstrating my work with Playwright, Selenium, a
 
 ---
 
-## 📂 Featured Projects
+## Featured Work
 
-### 🔹 Playwright Automation Suite
+### Seatly
 
-End-to-end test automation project using Playwright and TypeScript.
+OpenTable-style restaurant discovery and reservation app (Next.js, Prisma, Neon, Playwright).
 
-### 🔹 Portfolio Website
+### Playwright Automation Suite
 
-Modern responsive portfolio built with Next.js.
+Maintainable E2E automation with Playwright and TypeScript.
 
----
+### Elikuren Website
 
-## 🌍 Live Demo
-
-👉 https://www.charlesheller.dev/
+Responsive web presence for chamber choir Elikuren.
 
 ---
 
-## 📫 Contact
+## Live
 
-📧 charles@charlesheller.dev  
-🔗 LinkedIn: https://www.linkedin.com/in/charles-heller-068b53233/  
-💻 GitHub: https://github.com/CH4692
+https://www.charlesheller.dev/
 
 ---
 
-## 🎯 Purpose
+## Contact
 
-This portfolio is designed to:
-
-- Showcase my QA and automation skills
-- Present real-world testing projects
-- Provide a central place for recruiters and clients
+Email: charles@charlesheller.dev  
+LinkedIn: https://www.linkedin.com/in/charles-heller-068b53233/  
+GitHub: https://github.com/CH4692
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Charles Heller**  
-QA Automation Engineer
+Quality-Driven Software Engineer

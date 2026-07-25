@@ -6,20 +6,29 @@ export default function CtaButton({
   name,
   icon,
   addClass,
+  targetId = 'contact',
+  variant = 'primary',
 }: {
   name: string;
   icon?: ReactElement;
   addClass?: string;
+  targetId?: string;
+  variant?: 'primary' | 'secondary';
 }) {
-  function onClickeHandler() {
-    const navEl = document.getElementById('contact');
+  function onClickHandler() {
+    const navEl = document.getElementById(targetId);
     navEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  const base =
+    'cursor-pointer rounded-lg px-5 py-2.5 font-medium transition duration-300 ease-in-out hover:scale-[1.03]';
+  const styles =
+    variant === 'primary'
+      ? 'text-background from-primary to-cta-grad-end bg-gradient-to-br shadow-2xl/70 hover:shadow-primary'
+      : 'border-primary/60 text-white border bg-transparent hover:border-primary hover:bg-white/5';
+
   return (
-    <button
-      onClick={onClickeHandler}
-      className={`text-background hover:shadow-primary from-primary to-cta-grad-end cursor-pointer rounded-lg bg-gradient-to-br px-5 py-2 font-medium shadow-2xl/70 transition duration-400 ease-in-out hover:scale-105 ${addClass}`}
-    >
+    <button onClick={onClickHandler} className={`${base} ${styles} ${addClass ?? ''}`}>
       {name}
       {icon}
     </button>

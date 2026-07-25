@@ -7,42 +7,56 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="flex min-h-[calc(100dvh-var(--header-h))] scroll-mt-[var(--header-h)] flex-col justify-center gap-16 py-12 md:flex-row md:items-center md:justify-between"
+      className="hero-enter flex min-h-[calc(100dvh-var(--header-h))] scroll-mt-[var(--header-h)] flex-col justify-center gap-12 py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16"
     >
-      <div className="mt-8 max-w-2xl text-left sm:mt-24">
-        <p className="text-cool-grey mb-3 text-sm tracking-[0.2em] uppercase">
-          QA Automation Engineer
+      <div className="mt-8 w-full max-w-2xl min-w-0 text-left sm:mt-16">
+        <p className="text-cool-grey mb-3 font-sans text-sm tracking-[0.22em] uppercase">
+          Quality-Driven Software Engineer
         </p>
 
-        <h1 className="from-cta-grad-start to-cta-grad-end bg-gradient-to-r bg-clip-text text-4xl text-transparent md:text-7xl">
+        <h1 className="font-display from-cta-grad-start to-cta-grad-end bg-gradient-to-r bg-clip-text text-4xl break-words text-transparent sm:text-5xl lg:text-7xl">
           Charles Heller
         </h1>
 
-        <h2 className="mt-3 text-2xl md:text-5xl">
-          Building quality through automation and modern web development
+        <h2 className="font-display mt-4 text-2xl leading-snug sm:text-3xl lg:text-4xl">
+          I build reliable web apps — with testing, architecture, and automation from day one.
         </h2>
 
-        <p className="text-cool-grey mt-8 mb-12 max-w-xl leading-8">
-          I help teams build reliable web applications with a strong focus on
-          <strong> test automation</strong>, <strong>quality engineering</strong>, and
-          <strong> maintainable software</strong>. My main tools are Playwright, Selenium,
-          TypeScript, React, and Next.js.
+        <p className="text-cool-grey mt-6 mb-8 max-w-xl leading-8">
+          Enterprise QA and test management experience meets modern fullstack delivery. I ship
+          products teams can trust — and the automation that keeps them that way.
         </p>
 
-        <div className="flex flex-col gap-4 md:flex-row">
-          <CtaButton addClass="w-full md:w-xs" name="Contact Me" />
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <CtaButton
+            addClass="w-full sm:w-auto"
+            name="View selected work"
+            targetId="work"
+            variant="primary"
+          />
+          <CtaButton
+            addClass="w-full sm:w-auto"
+            name="Get in touch"
+            targetId="contact"
+            variant="secondary"
+          />
         </div>
+
+        <p className="text-cool-grey mt-8 text-sm tracking-wide">
+          Swiss Life · Playwright / TypeScript · Next.js
+        </p>
 
         <Icons />
       </div>
 
-      <div className="flex justify-center md:justify-end">
+      <div className="hero-portrait flex shrink-0 justify-center lg:justify-end">
         <Image
           src="/me.png"
           alt="Portrait of Charles Heller"
           width={420}
           height={620}
-          className="h-auto max-w-[260px] opacity-80 sm:max-w-[340px] md:max-w-[420px]"
+          priority
+          className="h-auto max-w-[220px] opacity-90 sm:max-w-[280px] lg:max-w-[380px]"
         />
       </div>
     </section>

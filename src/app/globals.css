@@ -22,13 +22,15 @@
   --color-sec-gra-start: #12141b;
   --color-sec-gra-end: #11131a;
   --nav-h: 5rem;
-  --font-sans:
-    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
-    'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji', sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
   .scrollbar::-webkit-scrollbar {
     background-color: (var(--color-primary));
   }
@@ -84,7 +86,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* nur Opazität/Blur – keine scale-Transforms nötig */
 @keyframes pulseOpacity {
   0%,
   100% {
@@ -94,5 +95,31 @@ body {
   50% {
     opacity: var(--alpha-max, 0.38);
     filter: blur(var(--blur-max, 36px));
+  }
+}
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter > div:first-child {
+  animation: heroEnter 0.7s ease-out both;
+}
+
+.hero-portrait {
+  animation: heroEnter 0.85s ease-out 0.12s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter > div:first-child,
+  .hero-portrait {
+    animation: none;
   }
 }
