@@ -1,52 +1,40 @@
-import { Briefcase, Code, Layers, Rocket, TestTube, Workflow } from 'lucide-react';
-
 import Title from '@/components/Title';
+import { bio, experience } from '@/data/experience';
 
 export default function About() {
-  const facts = [
-    { label: 'QA Automation Engineer', icon: TestTube },
-    { label: 'Test Manager at Swiss Life', icon: Briefcase },
-    { label: 'Playwright & Selenium', icon: Code },
-    { label: 'TypeScript & Next.js', icon: Layers },
-    { label: 'Agile QA & CRM Testing', icon: Workflow },
-    { label: 'Open for freelance work', icon: Rocket },
-  ];
-
   return (
     <section
-      id="about"
+      id="experience"
       className="from-sec-gra-start to-background flex min-h-[calc(100dvh-var(--header-h))] w-full scroll-mt-[var(--header-h)] items-center bg-linear-to-br py-20"
     >
       <div className="mx-auto w-full max-w-6xl px-4">
-        <Title>About Me</Title>
+        <Title>Experience</Title>
+        <h2 className="font-display mt-6 max-w-3xl text-3xl font-semibold md:text-4xl">
+          From enterprise quality leadership to shipping modern software.
+        </h2>
+        <p className="text-cool-grey mt-4 max-w-3xl leading-8">{bio}</p>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-[1.2fr_1fr]">
-          {/* LEFT */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-            <p className="text-cool-grey mb-3 text-sm tracking-[0.2em] uppercase">Who I am</p>
-
-            <h3 className="text-2xl font-semibold md:text-4xl">
-              Quality-focused engineer with a passion for automation
-            </h3>
-
-            <p className="text-cool-grey mt-6 max-w-2xl leading-8">
-              I build reliable testing solutions for modern web applications and help teams improve
-              software quality through automation, structure, and clean implementation.
-            </p>
-          </div>
-
-          {/* RIGHT */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            {facts.map(({ label, icon: Icon }) => (
-              <div
-                key={label}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:bg-white/10"
-              >
-                <Icon className="h-5 w-5 text-white/80" />
-                <p className="text-sm text-gray-200">{label}</p>
+        <div className="mt-12 space-y-8">
+          {experience.map((item) => (
+            <article
+              key={item.role + item.company}
+              className="grid gap-4 border-l border-white/10 pl-6 md:grid-cols-[220px_1fr]"
+            >
+              <div>
+                <p className="font-display text-lg font-semibold">{item.role}</p>
+                <p className="text-primary mt-1 text-sm">{item.company}</p>
+                <p className="text-cool-grey mt-2 text-xs tracking-wide uppercase">{item.period}</p>
               </div>
-            ))}
-          </div>
+              <div>
+                <p className="text-cool-grey leading-7">{item.summary}</p>
+                <ul className="text-cool-grey mt-4 list-disc space-y-2 pl-5 text-sm leading-6">
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

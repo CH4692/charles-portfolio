@@ -38,6 +38,8 @@ export default [
       'commitlint.config.cjs',
       '**/*.config.*',
       '**/*.cjs',
+      'playwright-report/**',
+      'test-results/**',
     ],
   },
 
