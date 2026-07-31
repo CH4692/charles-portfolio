@@ -1,8 +1,10 @@
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 
+import ContactForm from '@/components/ContactForm';
 import Title from '@/components/Title';
 import { availability } from '@/data/experience';
+import { references } from '@/data/proof';
 
 export default function Contact() {
   return (
@@ -18,35 +20,52 @@ export default function Contact() {
         </h2>
 
         <p className="text-cool-grey mt-6 leading-7">
-          {availability} I help teams ship fullstack products with automation and test strategy
-          baked in from day one.
+          {availability} Germany-based · remote-friendly. Tell me about the role or product — I
+          usually reply within one business day.
         </p>
+
+        <ContactForm />
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
             href="mailto:charles@charlesheller.dev?subject=Project%20inquiry%20%2F%20role"
-            className="text-background from-primary to-cta-grad-end hover:shadow-primary focus-ring inline-flex items-center gap-2 rounded-lg bg-gradient-to-br px-6 py-3 font-medium transition duration-300 hover:scale-[1.03]"
+            className="border-primary/60 hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
           >
-            <Mail className="h-5 w-5" />
+            <Mail className="h-4 w-4" />
             charles@charlesheller.dev
           </a>
           <a
             href="https://www.linkedin.com/in/charles-heller-068b53233/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-primary/60 hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border px-6 py-3 font-medium text-white transition duration-300 hover:bg-white/5"
+            className="hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-4 w-4" />
             LinkedIn
           </a>
           <Link
             href="/cv"
-            className="hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 font-medium text-white transition duration-300 hover:bg-white/5"
+            className="hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
           >
-            <FileText className="h-5 w-5" />
-            View CV
+            <FileText className="h-4 w-4" />
+            CV
           </Link>
+          <a
+            href="/charles-heller-cv.pdf"
+            download
+            className="hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
+          >
+            <FileText className="h-4 w-4" />
+            PDF
+          </a>
         </div>
+
+        <blockquote className="text-cool-grey mx-auto mt-10 max-w-xl text-sm leading-7 italic">
+          “{references[0].quote}”
+          <footer className="text-cool-grey/80 mt-2 text-xs tracking-wide uppercase not-italic">
+            {references[0].attribution}
+          </footer>
+        </blockquote>
 
         <div className="mt-8 flex justify-center gap-6">
           <a

@@ -1,3 +1,4 @@
+import CredibilityStrip from '@/components/CredibilityStrip';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
@@ -23,13 +24,16 @@ export default function PortfolioLayout({
         Skip to content
       </a>
       <Navbar />
-      <main id="main" className="px-5 pt-[var(--header-h)] sm:px-9">
-        {home}
-        {projects}
-        {approach}
-        {about}
-        {skills}
-        {contacts}
+      <main id="main" className="pt-[var(--header-h)]">
+        <div className="px-5 sm:px-9">{home}</div>
+        <CredibilityStrip />
+        <div className="px-5 sm:px-9">
+          {projects}
+          {approach}
+          {about}
+          {skills}
+          {contacts}
+        </div>
       </main>
       <Footer />
     </>

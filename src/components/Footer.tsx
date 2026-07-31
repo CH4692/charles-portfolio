@@ -11,6 +11,19 @@ export default function Footer() {
           <Link href="/cv" className="focus-ring hover:text-primary rounded-sm transition">
             CV
           </Link>
+          <a
+            href="/charles-heller-cv.pdf"
+            download
+            className="focus-ring hover:text-primary rounded-sm transition"
+          >
+            PDF
+          </a>
+          <Link
+            href="/work/navissedes"
+            className="focus-ring hover:text-primary rounded-sm transition"
+          >
+            Case study
+          </Link>
           <Link href="/impressum" className="focus-ring hover:text-primary rounded-sm transition">
             Impressum
           </Link>

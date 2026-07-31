@@ -1,4 +1,5 @@
 export type Project = {
+  slug: string;
   title: string;
   outcome: string;
   problem: string;
@@ -7,19 +8,26 @@ export type Project = {
   result: string;
   challenge: string;
   tradeoff: string;
+  differently: string;
+  testing: string;
+  metrics: string[];
+  architecture: string[];
+  gallery?: string[];
   tech: string[];
   github?: string;
   live?: string;
   image: string;
   featured: boolean;
   heroFeatured?: boolean;
+  caseStudy?: boolean;
 };
 
 export const projects: Project[] = [
   {
+    slug: 'navissedes',
     title: 'NavisSedes',
     outcome:
-      'Production event-ticketing platform for basilica concerts — seat holds, Stripe checkout, QR tickets, and staff check-in.',
+      'Production event-ticketing for basilica concerts — seat holds, Stripe, QR tickets, and staff check-in.',
     problem:
       'A church concert series needed reliable seat reservations, payments, invoicing, and door check-in — not a generic ticketing SaaS.',
     approach:
@@ -27,19 +35,38 @@ export const projects: Project[] = [
     owned:
       'End-to-end product ownership: seating plans, checkout, payments, tickets/invoices, role-based admin, and automated regression coverage.',
     result:
-      'Shipped a live booking system at navissedes.charlesheller.dev with paid + free events, versioned seating plans, and offline-capable QR check-in.',
+      'Live system serving paid and free events with interactive seating, 10-minute holds, Stripe checkout, QR tickets, and role-based admin check-in.',
     challenge:
       'Concurrent seat selection and hold expiry had to stay consistent under checkout races without overselling.',
     tradeoff:
-      'Chose optimistic locking + short holds over complex real-time websockets — simpler ops, clear failure modes, easier to test.',
+      'Chose optimistic locking + short holds over websockets — simpler ops, clearer failure modes, easier to test under load.',
+    differently:
+      'Next I would add stronger observability around hold expiry/webhook retries and a staging seed that mirrors production seating density.',
+    testing:
+      'Vitest covers domain/services; Playwright covers booking and admin flows — quality is part of the delivery pipeline, not a afterthought.',
+    metrics: [
+      '10-minute atomic seat holds',
+      'Paid + free checkout paths',
+      'Versioned seating plans (Draft → Published)',
+      'Vitest + Playwright coverage',
+    ],
+    architecture: [
+      'Venue → SeatingPlan → Section → Bench → Seat',
+      'AVAILABLE → HELD → sold/released lifecycle',
+      'Stripe Checkout + webhook (mock fallback for local/dev)',
+      'QR tokens without PII + staff scanner roles',
+    ],
+    gallery: ['/navissedes.png', '/navissedes-event.png', '/navissedes-seats.png'],
     tech: ['Next.js', 'Prisma', 'Neon', 'Stripe', 'Playwright', 'Vitest'],
     github: 'https://github.com/CH4692/NavisSedes',
     live: 'https://navissedes.charlesheller.dev/',
     image: '/navissedes.png',
     featured: true,
     heroFeatured: true,
+    caseStudy: true,
   },
   {
+    slug: 'seatly',
     title: 'Seatly',
     outcome:
       'Fullstack restaurant discovery and reservation app with auth, menus, and booking persisted end-to-end.',
@@ -50,11 +77,27 @@ export const projects: Project[] = [
     owned:
       'Domain modeling, auth/session, booking persistence, deploy environments, and automated E2E paths.',
     result:
-      'Live demo with searchable restaurants, authenticated sessions, and end-to-end reservation persistence.',
+      'Deployed demo with city search, auth sessions, restaurant detail/menus, and reservation persistence across environments.',
     challenge:
-      'Keeping develop and production Neon branches + env wiring aligned so builds and E2E stayed green.',
+      'Keeping develop/production Neon branches and env wiring aligned so builds and E2E stayed green.',
     tradeoff:
-      'Accepted an OpenTable-inspired UX to focus engineering depth on booking integrity, auth, and CI — not novel branding.',
+      'OpenTable-inspired UX to focus engineering depth on booking integrity, auth, and CI — not novel branding.',
+    differently:
+      'I would extract booking invariants into shared domain tests earlier to reduce env-specific flakiness.',
+    testing:
+      'Playwright CI covers home, search, restaurant/menu, reservation, and auth paths against a seeded database.',
+    metrics: [
+      'Multi-city restaurant search',
+      'JWT auth + session restore',
+      'CI Playwright suite on push/schedule',
+      'Separate develop/production DB branches',
+    ],
+    architecture: [
+      'App Router + API routes',
+      'Prisma schema on Neon Postgres',
+      'Cookie-based JWT sessions',
+      'Seeded demo data for deterministic E2E',
+    ],
     tech: ['Next.js', 'Prisma', 'Neon', 'JWT', 'Playwright'],
     github: 'https://github.com/CH4692/opentablenextjs',
     live: 'https://opentableclone-ten.vercel.app/',
@@ -62,6 +105,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: 'playwright-automation-suite',
     title: 'Playwright Automation Suite',
     outcome:
       'Maintainable E2E suite with Page Object Model — critical paths as engineering artifacts, not ad-hoc scripts.',
@@ -71,9 +115,25 @@ export const projects: Project[] = [
     owned:
       'Suite architecture, critical-path coverage, and a reportable run experience for stakeholders.',
     result:
-      'Reusable POM-based suite with published report UI — demonstrating automation as a shippable product.',
+      'Published POM-based suite with HTML report UI — automation presented as a shippable engineering product.',
     challenge: 'Balancing coverage breadth with suite stability so failures stay actionable.',
-    tradeoff: 'Prioritized a smaller, high-signal suite over chasing 100% UI coverage.',
+    tradeoff: 'Smaller high-signal suite over chasing 100% UI coverage.',
+    differently:
+      'I would add API-level setup helpers earlier to keep UI tests focused on user-visible risk.',
+    testing:
+      'The suite itself is the deliverable: structured specs, POM, traces/report artifacts for debugging.',
+    metrics: [
+      'Page Object Model structure',
+      'Critical-path login + cart coverage',
+      'HTML report for stakeholders',
+      'TypeScript-first maintainability',
+    ],
+    architecture: [
+      'Playwright Test runner',
+      'POM separation of pages/actions',
+      'Focused specs over giant end-to-end scripts',
+      'Report-first feedback loop',
+    ],
     tech: ['Playwright', 'TypeScript', 'E2E', 'POM'],
     github: 'https://github.com/CH4692/playwright-automation-suite',
     live: 'https://playwright-automation-suite.vercel.app/',
@@ -81,6 +141,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: 'elikuren',
     title: 'Elikuren Website',
     outcome:
       'Responsive site for chamber choir Elikuren — clear structure and a professional digital presence.',
@@ -90,9 +151,24 @@ export const projects: Project[] = [
       'Next.js + Tailwind with content-first layout, strong visual hierarchy, and mobile-ready UX.',
     owned:
       'Frontend implementation, responsive polish, and delivery toward a production-ready experience.',
-    result: 'Public-facing choir site with polished hero storytelling and clear navigation paths.',
+    result:
+      'Public-facing choir site with polished hero storytelling and clear navigation for concerts and participation.',
     challenge: 'Keeping brand atmosphere strong on mobile without cluttering the first viewport.',
-    tradeoff: 'Favored editorial layout and imagery over app-like interaction density.',
+    tradeoff: 'Editorial layout and imagery over app-like interaction density.',
+    differently:
+      'I would instrument key CTAs earlier to learn which content paths convert visitors.',
+    testing:
+      'Responsive UI validation and content hierarchy reviews across breakpoints before release.',
+    metrics: [
+      'Content-first responsive layout',
+      'Clear concert discovery path',
+      'Brand-forward first viewport',
+    ],
+    architecture: [
+      'Next.js App Router',
+      'Tailwind design system tokens',
+      'Section-based marketing structure',
+    ],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/CH4692/elikuren-app',
     live: 'https://dev.kammerchor-elikuren.de',
@@ -102,3 +178,7 @@ export const projects: Project[] = [
 ];
 
 export const heroProject = projects.find((p) => p.heroFeatured) ?? projects[0];
+
+export function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}

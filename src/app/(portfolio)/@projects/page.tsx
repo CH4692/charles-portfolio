@@ -1,5 +1,6 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Title from '@/components/Title';
 import { projects } from '@/data/projects';
@@ -24,9 +25,7 @@ export default function Projects() {
               { label: 'Result', text: project.result },
               { label: 'Problem', text: project.problem },
               { label: 'Approach', text: project.approach },
-              { label: 'Owned', text: project.owned },
-              { label: 'Challenge', text: project.challenge },
-              { label: 'Trade-off', text: project.tradeoff },
+              { label: 'Testing', text: project.testing },
             ];
 
             return (
@@ -37,7 +36,7 @@ export default function Projects() {
                 <div
                   className={`grid items-stretch lg:grid-cols-2 ${index % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''}`}
                 >
-                  <div className="bg-card relative min-h-[240px] overflow-hidden lg:min-h-[380px]">
+                  <div className="bg-card relative min-h-[240px] overflow-hidden lg:min-h-[360px]">
                     <Image
                       src={project.image}
                       alt={`${project.title} screenshot`}
@@ -64,6 +63,19 @@ export default function Projects() {
                       ))}
                     </ul>
 
+                    {project.metrics?.length > 0 && (
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {project.metrics.slice(0, 3).map((metric) => (
+                          <span
+                            key={metric}
+                            className="border-primary/20 bg-primary/5 text-primary/90 rounded-full border px-3 py-1 text-xs"
+                          >
+                            {metric}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
                     <div className="mt-5 flex flex-wrap gap-2">
                       {project.tech.map((t) => (
                         <span
@@ -75,7 +87,16 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    <div className="mt-6 flex gap-4">
+                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                      {(project.caseStudy || project.slug === 'navissedes') && (
+                        <Link
+                          href={`/work/${project.slug}`}
+                          className="text-primary focus-ring inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+                        >
+                          Read case study
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      )}
                       {project.github && (
                         <a
                           href={project.github}

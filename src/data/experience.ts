@@ -28,4 +28,5 @@ export const experience = [
 export const bio =
   'I started in QA, test automation, and test management on enterprise projects — then expanded into shipping modern web products myself. Today I work as a quality-driven software engineer: I build reliable applications and bake testing, architecture, and maintainability in from day one.';
 
-export const availability = 'Open for freelance, contract, and full-time roles.';
+export const availability =
+  'Open for freelance, contract, and full-time roles · Germany / remote-friendly.';

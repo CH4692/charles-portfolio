@@ -26,14 +26,14 @@ export default function Home() {
           I build reliable web apps — with testing, architecture, and automation from day one.
         </h2>
 
-        <p className="text-cool-grey mt-5 mb-6 max-w-xl leading-7">
-          Enterprise QA and test management experience meets modern fullstack delivery. I ship
-          products teams can trust — and the automation that keeps them that way.
+        <p className="text-cool-grey mt-5 mb-4 max-w-xl leading-7">
+          Enterprise QA and test management experience meets modern fullstack delivery. Based in
+          Germany · open to remote and hybrid roles.
         </p>
 
         <p className="text-primary/90 mb-6 text-sm font-medium tracking-wide">{availability}</p>
 
-        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <CtaButton
             addClass="w-full sm:w-auto"
             name="View selected work"
@@ -42,16 +42,10 @@ export default function Home() {
           />
           <Link
             href="/cv"
-            className="border-primary/60 hover:border-primary inline-flex w-full items-center justify-center rounded-lg border px-5 py-2.5 font-medium text-white transition duration-300 hover:scale-[1.03] hover:bg-white/5 sm:w-auto"
+            className="border-primary/60 hover:border-primary focus-ring inline-flex w-full items-center justify-center rounded-lg border px-5 py-2.5 font-medium text-white transition duration-300 hover:scale-[1.03] hover:bg-white/5 sm:w-auto"
           >
             View CV
           </Link>
-          <CtaButton
-            addClass="w-full sm:w-auto"
-            name="Get in touch"
-            targetId="contact"
-            variant="secondary"
-          />
         </div>
 
         <p className="text-cool-grey mt-7 text-sm tracking-wide">
@@ -63,7 +57,7 @@ export default function Home() {
 
       <div className="hero-portrait w-full max-w-lg shrink-0">
         <Link
-          href="#work"
+          href={`/work/${heroProject.slug}`}
           className="group hover:border-primary/40 block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:bg-white/[0.06]"
         >
           <div className="relative aspect-[16/10] overflow-hidden">
@@ -77,7 +71,7 @@ export default function Home() {
             />
           </div>
           <div className="p-4 sm:p-5">
-            <p className="text-primary text-xs tracking-[0.18em] uppercase">Featured project</p>
+            <p className="text-primary text-xs tracking-[0.18em] uppercase">Featured case study</p>
             <div className="mt-2 flex items-start justify-between gap-3">
               <div>
                 <h3 className="font-display text-xl font-semibold">{heroProject.title}</h3>

@@ -2,10 +2,14 @@ import { expect, test } from '@playwright/test';
 
 test('Logo Link', async ({ page }) => {
   await page.goto('/');
-  await page.locator('#home').getByRole('button', { name: 'Get in touch' }).click();
+  await page.getByRole('button', { name: 'View selected work', exact: true }).click();
   await page.getByRole('link', { name: 'Logo' }).click();
-  await expect(page.getByRole('heading', { name: 'Charles Heller' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Charles Heller' })).toBeInViewport();
+  await expect(
+    page.locator('#home').getByRole('heading', { name: 'Charles Heller' }),
+  ).toBeVisible();
+  await expect(
+    page.locator('#home').getByRole('heading', { name: 'Charles Heller' }),
+  ).toBeInViewport();
 });
 
 test('navigate to work section', async ({ page }) => {
@@ -33,7 +37,8 @@ test('navigate to stack section', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Stack', exact: true }).click();
   await expect(page.locator('#stack')).toBeVisible();
-  await expect(page.locator('#stack')).toBeInViewport();
+  // Smooth-scroll to a lower section can exceed the default 5s under load.
+  await expect(page.locator('#stack')).toBeInViewport({ timeout: 15_000 });
 });
 
 test('Get In Touch Button', async ({ page }) => {
@@ -56,7 +61,14 @@ test('View selected work Button', async ({ page }) => {
 test('Featured project NavisSedes is visible', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'NavisSedes' }).first()).toBeVisible();
-  await expect(page.getByText('Featured project')).toBeVisible();
+  await expect(page.getByText('Featured case study')).toBeVisible();
+});
+
+test('NavisSedes case study page', async ({ page }) => {
+  await page.goto('/work/navissedes');
+  await expect(page.getByRole('heading', { name: 'NavisSedes' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'How I tested this' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Live demo' })).toBeVisible();
 });
 
 test('CV link', async ({ page }) => {

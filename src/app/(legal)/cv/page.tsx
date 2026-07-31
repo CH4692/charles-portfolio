@@ -22,7 +22,16 @@ export default function CvPage() {
         >
           ← Back to portfolio
         </Link>
-        <PrintButton />
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/charles-heller-cv.pdf"
+            download
+            className="border-primary/60 hover:border-primary focus-ring rounded-lg border px-4 py-2 text-sm font-medium transition hover:bg-white/5"
+          >
+            Download PDF
+          </a>
+          <PrintButton />
+        </div>
       </div>
 
       <header className="border-b border-white/10 pb-8">
