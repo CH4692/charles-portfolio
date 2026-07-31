@@ -185,4 +185,23 @@ body {
   .print\:hidden {
     display: none !important;
   }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .bg-primary\/5,
+  .bg-white\/\[0\.02\],
+  .bg-white\/\[0\.025\],
+  .bg-white\/\[0\.04\] {
+    background: transparent !important;
+  }
+
+  .border-white\/10,
+  .border-white\/12,
+  .border-primary\/20,
+  .border-primary\/25 {
+    border-color: #d4d4d4 !important;
+  }
 }

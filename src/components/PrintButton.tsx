@@ -5,7 +5,7 @@ export default function PrintButton() {
     <button
       type="button"
       onClick={() => window.print()}
-      className="border-primary/60 hover:border-primary focus-ring rounded-lg border px-4 py-2 text-sm font-medium transition hover:bg-white/5"
+      className="border-primary/50 hover:border-primary focus-ring inline-flex items-center justify-center rounded-lg border px-3 py-2 text-sm font-medium transition hover:bg-white/5"
     >
       Print / Save as PDF
     </button>
