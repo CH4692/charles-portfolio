@@ -36,12 +36,26 @@ async function main() {
     const browser = await chromium.launch();
     const page = await browser.newPage();
     await page.goto(URL, { waitUntil: 'networkidle' });
+    await page.locator('.cv-print-logo').waitFor({ state: 'visible' });
+    await page.evaluate(async () => {
+      await Promise.all(
+        Array.from(document.images).map((img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise((resolve) => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+              }),
+        ),
+      );
+    });
     await page.emulateMedia({ media: 'print' });
     await page.pdf({
       path: OUT,
       format: 'A4',
       printBackground: true,
-      margin: { top: '12mm', right: '12mm', bottom: '12mm', left: '12mm' },
+      // Full-bleed hero; spacing comes from the print page itself.
+      margin: { top: '0', right: '0', bottom: '0', left: '0' },
     });
     await browser.close();
     console.log(`Wrote ${OUT}`);
