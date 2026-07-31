@@ -53,10 +53,18 @@ test('View selected work Button', async ({ page }) => {
   await expect(page.locator('#work')).toBeInViewport();
 });
 
-test('Instagram Link', async ({ page }) => {
+test('Featured project NavisSedes is visible', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('link', { name: 'Instagram', exact: true }).click();
-  expect(page.url()).toContain('instagram.com/ch_46');
+  await expect(page.getByRole('heading', { name: 'NavisSedes' }).first()).toBeVisible();
+  await expect(page.getByText('Featured project')).toBeVisible();
+});
+
+test('CV link', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#home').getByRole('link', { name: 'View CV' }).click();
+  await expect(page).toHaveURL(/\/cv/);
+  await expect(page.getByRole('heading', { name: 'Charles Heller', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Experience' })).toBeVisible();
 });
 
 test('LinkedIn Link', async ({ page }) => {

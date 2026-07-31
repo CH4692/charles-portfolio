@@ -5,10 +5,10 @@ export const stackGroups = [
   },
   {
     title: 'Platform',
-    skills: ['Prisma', 'Postgres', 'AWS', 'Cloudflare', 'GitHub Actions', 'REST APIs'],
+    skills: ['Prisma', 'Postgres', 'Stripe', 'Neon', 'Cloudflare', 'GitHub Actions', 'AWS'],
   },
   {
     title: 'Also used',
-    skills: ['Python', 'Selenium', 'k6', 'Postman', 'Java', 'Docker'],
+    skills: ['Python', 'Selenium', 'k6', 'Vitest', 'Postman', 'Docker'],
   },
 ];

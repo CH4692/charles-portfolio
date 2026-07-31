@@ -9,14 +9,14 @@
 @theme {
   --color-background: #0d1116;
   --color-foreground: #f2f2f2;
-  --color-primary: #03ffff;
+  --color-primary: #2ef5f5;
   --color-secondary: #1e2a47;
   --color-white: #f2f2f2;
-  --color-cool-grey: #b3b3b3;
+  --color-cool-grey: #c2c8d0;
   --color-border: #27303f;
   --color-card: #161a23;
-  --color-cta-grad-start: #03fdfc;
-  --color-cta-grad-end: #349b9b;
+  --color-cta-grad-start: #5cfffb;
+  --color-cta-grad-end: #1fb8b4;
   --color-animate: #27d3d4;
   --color-cv-btn: #111318;
   --color-sec-gra-start: #12141b;
@@ -29,6 +29,31 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    border-radius: 0.5rem;
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
   }
 
   .scrollbar::-webkit-scrollbar {
@@ -66,6 +91,12 @@
     @apply bg-background text-foreground font-sans antialiased;
     height: 100%;
     width: 100%;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
   }
 }
 
@@ -109,6 +140,17 @@ body {
   }
 }
 
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-enter > div:first-child {
   animation: heroEnter 0.7s ease-out both;
 }
@@ -117,9 +159,30 @@ body {
   animation: heroEnter 0.85s ease-out 0.12s both;
 }
 
+.reveal-on-scroll {
+  animation: revealUp 0.6s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-enter > div:first-child,
-  .hero-portrait {
+  .hero-portrait,
+  .reveal-on-scroll {
     animation: none;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .skip-link,
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
   }
 }

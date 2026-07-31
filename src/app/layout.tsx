@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Manrope, Syne } from 'next/font/google';
 
-import Navbar from '@/components/Navbar';
+import JsonLd from '@/components/JsonLd';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -18,39 +18,58 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: 'Charles Heller · Quality-Driven Software Engineer',
+  metadataBase: new URL('https://www.charlesheller.dev'),
+  title: {
+    default: 'Charles Heller · Quality-Driven Software Engineer',
+    template: '%s · Charles Heller',
+  },
   description:
-    'Portfolio of Charles Heller — quality-driven software engineer shipping modern web apps with testing, architecture, and automation from day one.',
+    'Quality-driven software engineer shipping modern web apps with testing, architecture, and automation from day one. Enterprise QA experience + fullstack delivery.',
+  keywords: [
+    'Software Engineer',
+    'Quality Engineering',
+    'Playwright',
+    'Next.js',
+    'TypeScript',
+    'Test Automation',
+    'Charles Heller',
+  ],
+  authors: [{ name: 'Charles Heller', url: 'https://www.charlesheller.dev' }],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.charlesheller.dev',
+    siteName: 'Charles Heller',
+    title: 'Charles Heller · Quality-Driven Software Engineer',
+    description:
+      'Enterprise QA depth meets modern fullstack delivery. Case studies in ticketing, reservations, and test automation.',
+    images: [
+      {
+        url: '/navissedes.png',
+        width: 1600,
+        height: 1000,
+        alt: 'NavisSedes — featured project by Charles Heller',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Charles Heller · Quality-Driven Software Engineer',
+    description:
+      'Enterprise QA depth meets modern fullstack delivery. Case studies in ticketing, reservations, and test automation.',
+    images: ['/navissedes.png'],
+  },
+  alternates: {
+    canonical: 'https://www.charlesheller.dev',
+  },
 };
 
-export default function RootLayout({
-  about,
-  approach,
-  home,
-  projects,
-  skills,
-  contacts,
-}: Readonly<{
-  children: React.ReactNode;
-  about: React.ReactNode;
-  approach: React.ReactNode;
-  home: React.ReactNode;
-  projects: React.ReactNode;
-  skills: React.ReactNode;
-  contacts: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`scroll-smooth ${manrope.variable} ${syne.variable}`}>
       <body className="font-sans">
-        <Navbar />
-        <main className="px-5 pt-[var(--header-h)] sm:px-9">
-          {home}
-          {projects}
-          {approach}
-          {about}
-          {skills}
-          {contacts}
-        </main>
+        <JsonLd />
+        {children}
       </body>
     </html>
   );
