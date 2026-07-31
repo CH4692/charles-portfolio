@@ -60,8 +60,7 @@ test('View selected work Button', async ({ page }) => {
 
 test('Featured project NavisSedes is visible', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'NavisSedes' }).first()).toBeVisible();
-  await expect(page.getByText('Featured case study')).toBeVisible();
+  await expect(page.locator('#work').getByRole('heading', { name: 'NavisSedes' })).toBeVisible();
 });
 
 test('NavisSedes case study page', async ({ page }) => {

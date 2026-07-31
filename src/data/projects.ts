@@ -17,14 +17,13 @@ export type Project = {
   github?: string;
   live?: string;
   image: string;
-  /** Optional alternate shot for the home hero card */
+  /** Optional alternate shot for case-study hero (vs work-card image) */
   heroImage?: string;
   /** Mockup stage gradient — primary accent */
   accent?: string;
   /** Mockup stage gradient — secondary/deep accent */
   accentSecondary?: string;
   featured: boolean;
-  heroFeatured?: boolean;
   caseStudy?: boolean;
 };
 
@@ -71,7 +70,6 @@ export const projects: Project[] = [
     accent: '#6b1a2e',
     accentSecondary: '#1a1216',
     featured: true,
-    heroFeatured: true,
     caseStudy: true,
   },
   {
@@ -191,8 +189,6 @@ export const projects: Project[] = [
     featured: true,
   },
 ];
-
-export const heroProject = projects.find((p) => p.heroFeatured) ?? projects[0];
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
