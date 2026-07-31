@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
+import BrowserMockup from '@/components/BrowserMockup';
 import CtaButton from '@/components/CtaButton';
 import Icons from '@/components/Icons';
 import { availability } from '@/data/experience';
@@ -58,18 +58,17 @@ export default function Home() {
       <div className="hero-portrait w-full max-w-lg shrink-0">
         <Link
           href={`/work/${heroProject.slug}`}
-          className="group hover:border-primary/40 block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:bg-white/[0.06]"
+          className="group hover:border-primary/40 block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition"
         >
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <Image
-              src={heroProject.image}
-              alt={`${heroProject.title} preview`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 512px"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            />
-          </div>
+          <BrowserMockup
+            src={heroProject.heroImage ?? heroProject.image}
+            alt={`${heroProject.title} preview`}
+            url={heroProject.live}
+            accent={heroProject.accent}
+            accentSecondary={heroProject.accentSecondary}
+            priority
+            sizes="(max-width: 1024px) 100vw, 512px"
+          />
           <div className="p-4 sm:p-5">
             <p className="text-primary text-xs tracking-[0.18em] uppercase">Featured case study</p>
             <div className="mt-2 flex items-start justify-between gap-3">

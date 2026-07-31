@@ -17,6 +17,12 @@ export type Project = {
   github?: string;
   live?: string;
   image: string;
+  /** Optional alternate shot for the home hero card */
+  heroImage?: string;
+  /** Mockup stage gradient — primary accent */
+  accent?: string;
+  /** Mockup stage gradient — secondary/deep accent */
+  accentSecondary?: string;
   featured: boolean;
   heroFeatured?: boolean;
   caseStudy?: boolean;
@@ -56,11 +62,14 @@ export const projects: Project[] = [
       'Stripe Checkout + webhook (mock fallback for local/dev)',
       'QR tokens without PII + staff scanner roles',
     ],
-    gallery: ['/navissedes.png', '/navissedes-event.png', '/navissedes-seats.png'],
+    gallery: ['/navissedes.jpg', '/navissedes-seats.png', '/navissedes-event.png'],
     tech: ['Next.js', 'Prisma', 'Neon', 'Stripe', 'Playwright', 'Vitest'],
     github: 'https://github.com/CH4692/NavisSedes',
     live: 'https://navissedes.charlesheller.dev/',
-    image: '/navissedes.png',
+    image: '/navissedes-seats.png',
+    heroImage: '/navissedes.jpg',
+    accent: '#6b1a2e',
+    accentSecondary: '#1a1216',
     featured: true,
     heroFeatured: true,
     caseStudy: true,
@@ -101,7 +110,9 @@ export const projects: Project[] = [
     tech: ['Next.js', 'Prisma', 'Neon', 'JWT', 'Playwright'],
     github: 'https://github.com/CH4692/opentablenextjs',
     live: 'https://opentableclone-ten.vercel.app/',
-    image: '/seatly.png',
+    image: '/seatly.jpg',
+    accent: '#0d4f52',
+    accentSecondary: '#0c1418',
     featured: true,
   },
   {
@@ -138,6 +149,8 @@ export const projects: Project[] = [
     github: 'https://github.com/CH4692/playwright-automation-suite',
     live: 'https://playwright-automation-suite.vercel.app/',
     image: '/playwright.png',
+    accent: '#2a3f1e',
+    accentSecondary: '#10140f',
     featured: true,
   },
   {
@@ -173,6 +186,8 @@ export const projects: Project[] = [
     github: 'https://github.com/CH4692/elikuren-app',
     live: 'https://dev.kammerchor-elikuren.de',
     image: '/elikuren.png',
+    accent: '#3d2a4a',
+    accentSecondary: '#121018',
     featured: true,
   },
 ];
