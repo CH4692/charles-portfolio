@@ -36,6 +36,16 @@ Responsive web presence for chamber choir Elikuren.
 - React
 - TypeScript
 - Tailwind CSS
+- Resend (contact form)
+
+---
+
+## Contact form (Resend)
+
+1. Create an API key at [resend.com](https://resend.com/api-keys).
+2. Verify `charlesheller.dev` (or use `onboarding@resend.dev` for testing).
+3. Copy `.env.example` → `.env.local` and fill in the values.
+4. On Vercel, add the same env vars for Preview/Production.
 
 ---
 
