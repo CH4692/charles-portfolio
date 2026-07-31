@@ -4,9 +4,29 @@ Personal portfolio of a **Quality-Driven Software Engineer** — modern web deli
 
 ---
 
-## About
+## Live
 
-This site positions Charles Heller as an engineer who ships reliable web applications and designs quality into the product from day one: testing, architecture, automation, and maintainability.
+https://www.charlesheller.dev/
+
+---
+
+## Featured Work
+
+### NavisSedes
+
+Event ticketing for basilica concerts — seat reservations, Stripe payments, QR tickets, admin check-in.
+
+### Seatly
+
+OpenTable-style restaurant discovery and reservation app.
+
+### Playwright Automation Suite
+
+Maintainable E2E automation with Playwright and TypeScript.
+
+### Elikuren Website
+
+Responsive web presence for chamber choir Elikuren.
 
 ---
 
@@ -19,33 +39,12 @@ This site positions Charles Heller as an engineer who ships reliable web applica
 
 ---
 
-## Featured Work
-
-### Seatly
-
-OpenTable-style restaurant discovery and reservation app (Next.js, Prisma, Neon, Playwright).
-
-### Playwright Automation Suite
-
-Maintainable E2E automation with Playwright and TypeScript.
-
-### Elikuren Website
-
-Responsive web presence for chamber choir Elikuren.
-
----
-
-## Live
-
-https://www.charlesheller.dev/
-
----
-
 ## Contact
 
 Email: charles@charlesheller.dev  
 LinkedIn: https://www.linkedin.com/in/charles-heller-068b53233/  
-GitHub: https://github.com/CH4692
+GitHub: https://github.com/CH4692  
+CV: https://www.charlesheller.dev/cv
 
 ---
 
