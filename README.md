@@ -40,6 +40,18 @@ Responsive web presence for chamber choir Elikuren.
 
 ---
 
+## CV PDF
+
+Regenerate the downloadable resume after content changes:
+
+```bash
+npm run cv:pdf
+```
+
+This builds the site and prints the ATS-friendly layout at `/cv/print` into `public/charles-heller-cv.pdf`.
+
+---
+
 ## Contact form (Resend)
 
 1. Create an API key at [resend.com](https://resend.com/api-keys).

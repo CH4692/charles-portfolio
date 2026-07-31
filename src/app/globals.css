@@ -173,14 +173,208 @@ body {
   }
 }
 
+/* Dedicated light CV used for PDF generation (/cv/print) */
+body:has(.cv-print-doc) {
+  background: #ffffff;
+  color: #1a1f26;
+}
+
+.cv-print-doc {
+  --cv-ink: #12161c;
+  --cv-muted: #4a5563;
+  --cv-rule: #d7dde5;
+  --cv-accent: #0f6e73;
+  box-sizing: border-box;
+  max-width: 210mm;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 14mm 16mm;
+  background: #ffffff;
+  color: var(--cv-ink);
+  font-family: var(--font-manrope), Helvetica, Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cv-print-header {
+  padding-bottom: 10pt;
+  border-bottom: 2.5pt solid var(--cv-accent);
+  margin-bottom: 14pt;
+}
+
+.cv-print-name {
+  margin: 0;
+  font-family: var(--font-syne), Helvetica, Arial, sans-serif;
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--cv-ink);
+}
+
+.cv-print-title {
+  margin: 6pt 0 0;
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: var(--cv-accent);
+  line-height: 1.35;
+}
+
+.cv-print-contact {
+  margin: 8pt 0 0;
+  font-size: 9pt;
+  color: var(--cv-muted);
+  line-height: 1.4;
+}
+
+.cv-print-section {
+  margin-top: 13pt;
+}
+
+.cv-print-h2 {
+  margin: 0 0 6pt;
+  padding-bottom: 3pt;
+  border-bottom: 1pt solid var(--cv-rule);
+  font-family: var(--font-syne), Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+}
+
+.cv-print-h3 {
+  margin: 0;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--cv-ink);
+  line-height: 1.3;
+}
+
+.cv-print-body {
+  margin: 0;
+  color: var(--cv-muted);
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+.cv-print-muted {
+  font-weight: 600;
+  color: var(--cv-muted);
+}
+
+.cv-print-skills {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-print-skills li {
+  margin: 0 0 3.5pt;
+}
+
+.cv-print-skill-label {
+  font-weight: 700;
+  color: var(--cv-ink);
+}
+
+.cv-print-skills .cv-print-body {
+  color: var(--cv-muted);
+}
+
+.cv-print-jobs,
+.cv-print-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 11pt;
+}
+
+.cv-print-job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4pt 12pt;
+}
+
+.cv-print-date {
+  margin: 0;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--cv-accent);
+  white-space: nowrap;
+}
+
+.cv-print-context {
+  margin: 2pt 0 0;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--cv-ink);
+}
+
+.cv-print-job-summary {
+  margin-top: 4pt;
+}
+
+.cv-print-bullets {
+  margin: 5pt 0 0;
+  padding-left: 14pt;
+}
+
+.cv-print-bullets li {
+  margin: 0 0 2.5pt;
+  color: var(--cv-muted);
+  font-size: 9.75pt;
+  line-height: 1.4;
+}
+
+.cv-print-bullets li::marker {
+  color: var(--cv-accent);
+}
+
+.cv-print-project .cv-print-body {
+  margin-top: 2pt;
+}
+
+.cv-print-stack {
+  margin: 3pt 0 0;
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: var(--cv-ink);
+  letter-spacing: 0.01em;
+}
+
+.cv-print-approach {
+  margin-top: 14pt;
+  padding-top: 2pt;
+}
+
 @media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
   body {
     background: white;
     color: black;
   }
 
+  body:has(.cv-print-doc) {
+    background: white !important;
+  }
+
+  .cv-print-doc {
+    max-width: none;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
   .skip-link,
-  header,
+  header:not(.cv-print-header),
   footer,
   .print\:hidden {
     display: none !important;
