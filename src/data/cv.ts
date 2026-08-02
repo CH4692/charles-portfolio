@@ -124,7 +124,7 @@ export const cvProjects = [
   },
   {
     title: 'Elikuren',
-    href: 'https://dev.kammerchor-elikuren.de',
+    href: 'https://elikuren-app.vercel.app/',
     description:
       'Modern choir website with a secure member platform — public presence, protected member area, media library, and administration.',
     features: [

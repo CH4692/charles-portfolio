@@ -182,7 +182,7 @@ export const projects: Project[] = [
     ],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/CH4692/elikuren-app',
-    live: 'https://dev.kammerchor-elikuren.de',
+    live: 'https://elikuren-app.vercel.app/',
     image: '/elikuren.png',
     accent: '#3d2a4a',
     accentSecondary: '#121018',
