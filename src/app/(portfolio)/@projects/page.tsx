@@ -1,7 +1,7 @@
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
+import BrowserMockup from '@/components/BrowserMockup';
 import Title from '@/components/Title';
 import { projects } from '@/data/projects';
 
@@ -19,7 +19,7 @@ export default function Projects() {
           Case studies that show how I ship software — and the quality systems that travel with it.
         </p>
 
-        <div className="mt-12 flex flex-col gap-14">
+        <div className="mt-12 flex flex-col gap-16">
           {featured.map((project, index) => {
             const bullets = [
               { label: 'Result', text: project.result },
@@ -31,22 +31,24 @@ export default function Projects() {
             return (
               <article
                 key={project.title}
-                className="group reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:bg-white/[0.06]"
+                className="group reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
               >
                 <div
                   className={`grid items-stretch lg:grid-cols-2 ${index % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''}`}
                 >
-                  <div className="bg-card relative min-h-[240px] overflow-hidden lg:min-h-[360px]">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                  </div>
+                  <BrowserMockup
+                    src={project.image}
+                    alt={`${project.title} product preview`}
+                    url={project.live}
+                    accent={project.accent}
+                    accentSecondary={project.accentSecondary}
+                    priority={index === 0}
+                    fillHeight
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="min-h-[300px] lg:min-h-[420px]"
+                  />
 
-                  <div className="flex flex-col justify-center p-6 md:p-8">
+                  <div className="flex flex-col justify-center p-6 md:p-8 lg:p-10">
                     <h3 className="font-display text-2xl font-semibold md:text-3xl">
                       {project.title}
                     </h3>

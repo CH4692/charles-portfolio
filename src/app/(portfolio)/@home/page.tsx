@@ -1,11 +1,9 @@
-import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import CtaButton from '@/components/CtaButton';
 import Icons from '@/components/Icons';
 import { availability } from '@/data/experience';
-import { heroProject } from '@/data/projects';
 
 export default function Home() {
   return (
@@ -55,32 +53,21 @@ export default function Home() {
         <Icons />
       </div>
 
-      <div className="hero-portrait w-full max-w-lg shrink-0">
-        <Link
-          href={`/work/${heroProject.slug}`}
-          className="group hover:border-primary/40 block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:bg-white/[0.06]"
-        >
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <Image
-              src={heroProject.image}
-              alt={`${heroProject.title} preview`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 512px"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="p-4 sm:p-5">
-            <p className="text-primary text-xs tracking-[0.18em] uppercase">Featured case study</p>
-            <div className="mt-2 flex items-start justify-between gap-3">
-              <div>
-                <h3 className="font-display text-xl font-semibold">{heroProject.title}</h3>
-                <p className="text-cool-grey mt-2 text-sm leading-6">{heroProject.result}</p>
-              </div>
-              <ExternalLink className="group-hover:text-primary mt-1 h-4 w-4 shrink-0 text-white/50 transition" />
-            </div>
-          </div>
-        </Link>
+      <div className="hero-portrait w-full max-w-md shrink-0 lg:max-w-lg">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-[0_28px_64px_-20px_rgba(0,0,0,0.55)]">
+          <Image
+            src="/me.png"
+            alt="Charles Heller"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 512px"
+            className="object-cover object-top"
+          />
+          <div
+            aria-hidden
+            className="from-background/50 pointer-events-none absolute inset-0 bg-linear-to-t via-transparent to-transparent"
+          />
+        </div>
       </div>
     </section>
   );

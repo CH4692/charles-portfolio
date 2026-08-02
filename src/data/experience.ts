@@ -1,32 +1,32 @@
 export const experience = [
   {
-    role: 'Test Manager',
+    role: 'Test Manager · Test Data Manager · Test Environment Manager',
     company: 'Swiss Life',
-    period: 'Multi-year · Enterprise CRM & digital delivery',
+    period: 'Multi-year · Enterprise CRM & digital platforms',
     summary:
-      'Lead quality for complex enterprise delivery — aligning teams on risk, coverage, and release readiness across CRM and related digital workflows.',
+      'Help ensure complex CRM and digital platforms can be delivered with confidence — spanning test strategy, automation, test data, and environment readiness across agile teams.',
     highlights: [
-      'Owned test strategy in agile delivery for multi-team CRM programs.',
-      'Drove automation with Playwright, TypeScript, API testing, and structured testdata practices.',
-      'Partnered with engineering and product so quality became a shared delivery signal — not a late gate.',
+      'Lead enterprise test management, quality engineering, and risk-based testing for multi-team delivery.',
+      'Drive Playwright automation, API testing, and release readiness with engineering and product partners.',
+      'Own test data and environment management — refresh concepts, governance, coordination, and AWS-related delivery support.',
     ],
   },
   {
-    role: 'Software Engineer · Freelance / Projects',
-    company: 'Independent',
-    period: 'Ongoing · Web products & automation',
+    role: 'Independent Software Engineer',
+    company: 'Freelance / Projects',
+    period: 'Ongoing · Web products & SaaS',
     summary:
-      'Building modern web applications while applying the same quality systems used in enterprise environments.',
+      'Build modern web applications from idea to production while applying the same quality systems used in enterprise environments.',
     highlights: [
-      'Shipped fullstack products such as NavisSedes (ticketing) and Seatly (reservations) with Next.js, Prisma, and cloud data layers.',
-      'Designed Playwright / Vitest suites and CI-ready automation as part of product delivery.',
-      'Bridged QA depth and engineering ownership — from architecture decisions to shippable releases.',
+      'Ship fullstack products such as NavisSedes (ticketing) and Seatly (reservations) with Next.js, Prisma, and cloud data layers.',
+      'Design Playwright / Vitest suites and CI-ready automation as part of product delivery.',
+      'Bridge QA depth and engineering ownership — from architecture decisions to shippable releases.',
     ],
   },
 ];
 
 export const bio =
-  'I started in QA, test automation, and test management on enterprise projects — then expanded into shipping modern web products myself. Today I work as a quality-driven software engineer: I build reliable applications and bake testing, architecture, and maintainability in from day one.';
+  'I build reliable software by combining enterprise quality engineering with modern full-stack development. Quality is designed into the product from day one — not verified at the end.';
 
 export const availability =
   'Open for freelance, contract, and full-time roles · Germany / remote-friendly.';

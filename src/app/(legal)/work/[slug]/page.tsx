@@ -1,9 +1,9 @@
 import { ExternalLink, Github } from 'lucide-react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import BrowserMockup from '@/components/BrowserMockup';
 import { getProject, projects } from '@/data/projects';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -76,14 +76,16 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </header>
 
-      <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10">
-        <Image
-          src={project.image}
+      <div className="mt-10 overflow-hidden rounded-2xl border border-white/10">
+        <BrowserMockup
+          src={project.heroImage ?? project.image}
           alt={`${project.title} overview`}
-          fill
+          url={project.live}
+          accent={project.accent}
+          accentSecondary={project.accentSecondary}
           priority
-          className="object-cover object-top"
           sizes="(max-width: 896px) 100vw, 896px"
+          className="rounded-2xl"
         />
       </div>
 
@@ -147,17 +149,15 @@ export default async function CaseStudyPage({ params }: Props) {
       {gallery.length > 1 && (
         <section className="mt-12">
           <h2 className="font-display text-2xl font-semibold">Product walkthrough</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
             {gallery.map((src) => (
-              <div
-                key={src}
-                className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10"
-              >
-                <Image
+              <div key={src} className="overflow-hidden rounded-xl border border-white/10">
+                <BrowserMockup
                   src={src}
                   alt={`${project.title} screen`}
-                  fill
-                  className="object-cover object-top"
+                  url={project.live}
+                  accent={project.accent}
+                  accentSecondary={project.accentSecondary}
                   sizes="(max-width: 768px) 100vw, 448px"
                 />
               </div>

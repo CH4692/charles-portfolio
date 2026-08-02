@@ -1,4 +1,4 @@
-import { FileText, Github, Linkedin, Mail } from 'lucide-react';
+import { FileText, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 import ContactForm from '@/components/ContactForm';
@@ -66,18 +66,6 @@ export default function Contact() {
             {references[0].attribution}
           </footer>
         </blockquote>
-
-        <div className="mt-8 flex justify-center gap-6">
-          <a
-            href="https://github.com/CH4692"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="focus-ring rounded-md text-white/70 transition hover:text-white"
-          >
-            <Github className="h-6 w-6" />
-          </a>
-        </div>
       </div>
     </section>
   );

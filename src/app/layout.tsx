@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       'Enterprise QA depth meets modern fullstack delivery. Case studies in ticketing, reservations, and test automation.',
     images: [
       {
-        url: '/navissedes.png',
+        url: '/navissedes.jpg',
         width: 1600,
         height: 1000,
         alt: 'NavisSedes — featured project by Charles Heller',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Charles Heller · Quality-Driven Software Engineer',
     description:
       'Enterprise QA depth meets modern fullstack delivery. Case studies in ticketing, reservations, and test automation.',
-    images: ['/navissedes.png'],
+    images: ['/navissedes.jpg'],
   },
   alternates: {
     canonical: 'https://www.charlesheller.dev',
