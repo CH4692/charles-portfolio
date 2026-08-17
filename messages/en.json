@@ -1,10 +1,10 @@
 {
   "Meta": {
-    "titleDefault": "Charles Heller · Quality-Driven Software Engineer",
+    "titleDefault": "Charles Heller | Software Engineer & Test Automation · Germany",
     "titleTemplate": "%s · Charles Heller",
-    "description": "Quality-driven software engineer shipping modern web apps with testing, architecture, and automation from day one. Enterprise QA experience + fullstack delivery.",
-    "ogDescription": "Enterprise QA depth meets modern fullstack delivery. Case studies in ticketing, reservations, and test automation.",
-    "keywords": "Software Engineer, Quality Engineering, Playwright, Next.js, TypeScript, Test Automation, Charles Heller"
+    "description": "Charles Heller is a software engineer in Germany specializing in Next.js, TypeScript, Playwright, and quality engineering. Portfolio, case studies, and CV at charlesheller.dev.",
+    "ogDescription": "Meet Charles Heller — software engineer combining enterprise QA with modern fullstack delivery. Next.js, TypeScript, Playwright. Based in Germany.",
+    "keywords": "Charles Heller, Charles Heller Software Engineer, Charles Heller Entwickler, Software Engineer Germany, Playwright, Next.js, TypeScript, Test Automation, Quality Engineering, Swiss Life, charlesheller.dev"
   },
   "Nav": {
     "ariaLabel": "Main navigation",
@@ -39,7 +39,7 @@
     "body": "Enterprise QA and test management experience meets modern fullstack delivery. Based in Germany · open to remote and hybrid roles.",
     "viewWork": "View selected work",
     "viewCv": "View CV",
-    "trustLine": "Swiss Life · Playwright / TypeScript · Next.js",
+    "trustLine": "Charles Heller · Swiss Life · Playwright / TypeScript · Next.js",
     "portraitAlt": "Charles Heller"
   },
   "Credibility": {
@@ -94,8 +94,8 @@
     "errorNetwork": "Network error. Please try again or email charles@charlesheller.dev."
   },
   "Cv": {
-    "metaTitle": "CV",
-    "metaDescription": "Curriculum vitae of Charles Heller — Senior Software Engineer focused on quality engineering, full-stack delivery, and test data & environment management.",
+    "metaTitle": "CV — Software Engineer & Quality Engineering",
+    "metaDescription": "CV of Charles Heller — Software Engineer in Germany. Full-stack delivery, Playwright test automation, quality engineering, test data & environment management.",
     "eyebrow": "Curriculum Vitae",
     "downloadPdf": "Download PDF",
     "printPdf": "Print PDF",

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import CtaButton from '@/components/CtaButton';
 import Icons from '@/components/Icons';
 import { getAvailability } from '@/data/experience';
+import { localizedPath } from '@/i18n/paths';
 import type { Locale } from '@/i18n/routing';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -46,7 +47,7 @@ export default async function Home({ params }: Props) {
           />
           {/* Hard nav: soft transitions out of the parallel-route portfolio layout can leave the URL on /{locale}. */}
           <a
-            href={`/${locale}/cv`}
+            href={localizedPath(locale, '/cv')}
             className="border-primary/60 hover:border-primary focus-ring inline-flex w-full items-center justify-center rounded-lg border px-5 py-2.5 font-medium text-white transition duration-300 hover:scale-[1.03] hover:bg-white/5 sm:w-auto"
           >
             {t('viewCv')}

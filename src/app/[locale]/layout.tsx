@@ -5,6 +5,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import type { ReactNode } from 'react';
 
 import JsonLd from '@/components/JsonLd';
+import { absoluteUrl, languageAlternates } from '@/i18n/paths';
 import { type Locale, routing } from '@/i18n/routing';
 
 const manrope = Manrope({
@@ -32,11 +33,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Meta' });
   const pathLocale = locale as Locale;
-  const languages = {
-    en: 'https://www.charlesheller.dev/en',
-    de: 'https://www.charlesheller.dev/de',
-    'x-default': 'https://www.charlesheller.dev/en',
-  };
+  const pageUrl = absoluteUrl(pathLocale, '/');
 
   return {
     metadataBase: new URL('https://www.charlesheller.dev'),
@@ -49,19 +46,39 @@ export async function generateMetadata({ params }: Props) {
       .split(',')
       .map((k) => k.trim()),
     authors: [{ name: 'Charles Heller', url: 'https://www.charlesheller.dev' }],
+    creator: 'Charles Heller',
+    publisher: 'Charles Heller',
+    category: 'technology',
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
     openGraph: {
       type: 'website' as const,
       locale: pathLocale === 'de' ? 'de_DE' : 'en_US',
-      url: `https://www.charlesheller.dev/${pathLocale}`,
+      url: pageUrl,
       siteName: 'Charles Heller',
       title: t('titleDefault'),
       description: t('ogDescription'),
       images: [
         {
-          url: '/navissedes.jpg',
-          width: 1600,
-          height: 1000,
-          alt: 'NavisSedes — Charles Heller',
+          url: '/portfolio.png',
+          width: 2880,
+          height: 1566,
+          alt: 'Charles Heller — Software Engineer Portfolio',
+        },
+        {
+          url: '/me.png',
+          width: 720,
+          height: 921,
+          alt: 'Portrait of Charles Heller',
         },
       ],
     },
@@ -69,11 +86,11 @@ export async function generateMetadata({ params }: Props) {
       card: 'summary_large_image' as const,
       title: t('titleDefault'),
       description: t('ogDescription'),
-      images: ['/navissedes.jpg'],
+      images: ['/portfolio.png'],
     },
     alternates: {
-      canonical: `https://www.charlesheller.dev/${pathLocale}`,
-      languages,
+      canonical: pageUrl,
+      languages: languageAlternates('/'),
     },
   };
 }
@@ -89,7 +106,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`scroll-smooth ${manrope.variable} ${syne.variable}`}>
       <body className="font-sans">
         <NextIntlClientProvider messages={messages}>
-          <JsonLd />
+          <JsonLd locale={locale} />
           {children}
         </NextIntlClientProvider>
       </body>

@@ -23,7 +23,8 @@ async function waitForServer(url, attempts = 60) {
 }
 
 async function exportLocale(browser, locale, out) {
-  const url = `http://127.0.0.1:${PORT}/${locale}/cv/print`;
+  const path = locale === 'en' ? '/cv/print' : `/${locale}/cv/print`;
+  const url = `http://127.0.0.1:${PORT}${path}`;
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle' });
   await page.locator('.cv-print-logo').waitFor({ state: 'visible' });
@@ -62,7 +63,7 @@ async function main() {
   });
 
   try {
-    await waitForServer(`http://127.0.0.1:${PORT}/en/cv/print`);
+    await waitForServer(`http://127.0.0.1:${PORT}/cv/print`);
     const browser = await chromium.launch();
     for (const { locale, out } of LOCALES) {
       await exportLocale(browser, locale, out);

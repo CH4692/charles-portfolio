@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Link } from '@/i18n/navigation';
+import { localizedPath } from '@/i18n/paths';
 import type { Locale } from '@/i18n/routing';
 
 export default function Footer() {
@@ -18,7 +19,10 @@ export default function Footer() {
           © {year} Charles Heller · {t('tagline')}
         </p>
         <nav aria-label={t('legalAria')} className="flex flex-wrap gap-4">
-          <a href={`/${locale}/cv`} className="focus-ring hover:text-primary rounded-sm transition">
+          <a
+            href={localizedPath(locale, '/cv')}
+            className="focus-ring hover:text-primary rounded-sm transition"
+          >
             {t('cv')}
           </a>
           <a

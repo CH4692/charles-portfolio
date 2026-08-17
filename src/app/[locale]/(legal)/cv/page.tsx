@@ -17,7 +17,8 @@ import {
   getCvWorkflow,
 } from '@/data/cv';
 import { Link } from '@/i18n/navigation';
-import { type Locale, locales } from '@/i18n/routing';
+import { absoluteUrl, languageAlternates } from '@/i18n/paths';
+import { type Locale } from '@/i18n/routing';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -33,17 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: loc } = await params;
   const locale = loc as Locale;
   const t = await getTranslations({ locale, namespace: 'Cv' });
-  const languages = Object.fromEntries(
-    locales.map((l) => [l, `https://www.charlesheller.dev/${l}/cv`]),
-  ) as Record<string, string>;
-  languages['x-default'] = 'https://www.charlesheller.dev/en/cv';
 
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `https://www.charlesheller.dev/${locale}/cv`,
-      languages,
+      canonical: absoluteUrl(locale, '/cv'),
+      languages: languageAlternates('/cv'),
+    },
+    openGraph: {
+      title: `${t('metaTitle')} · Charles Heller`,
+      description: t('metaDescription'),
+      url: absoluteUrl(locale, '/cv'),
     },
   };
 }

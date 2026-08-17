@@ -1,10 +1,10 @@
 {
   "Meta": {
-    "titleDefault": "Charles Heller · Quality-Driven Software Engineer",
+    "titleDefault": "Charles Heller | Software Engineer & Testautomation · Deutschland",
     "titleTemplate": "%s · Charles Heller",
-    "description": "Quality-driven Software Engineer: moderne Web-Apps mit Testing, Architektur und Automation von Tag eins. Enterprise-QA-Erfahrung und Fullstack-Delivery.",
-    "ogDescription": "Enterprise-QA-Tiefe trifft moderne Fullstack-Delivery. Case Studies zu Ticketing, Reservierungen und Testautomation.",
-    "keywords": "Software Engineer, Quality Engineering, Playwright, Next.js, TypeScript, Testautomation, Charles Heller"
+    "description": "Charles Heller ist Software Engineer in Deutschland — Next.js, TypeScript, Playwright und Quality Engineering. Portfolio, Case Studies und Lebenslauf auf charlesheller.dev.",
+    "ogDescription": "Charles Heller — Software Engineer mit Enterprise-QA und modernem Fullstack-Delivery. Next.js, TypeScript, Playwright. Standort Deutschland.",
+    "keywords": "Charles Heller, Charles Heller Software Engineer, Charles Heller Entwickler, Software Engineer Deutschland, Playwright, Next.js, TypeScript, Testautomation, Quality Engineering, Swiss Life, charlesheller.dev"
   },
   "Nav": {
     "ariaLabel": "Hauptnavigation",
@@ -39,7 +39,7 @@
     "body": "Enterprise-QA und Testmanagement treffen moderne Fullstack-Delivery. Standort Deutschland · offen für Remote und Hybrid.",
     "viewWork": "Selected Work ansehen",
     "viewCv": "CV ansehen",
-    "trustLine": "Swiss Life · Playwright / TypeScript · Next.js",
+    "trustLine": "Charles Heller · Swiss Life · Playwright / TypeScript · Next.js",
     "portraitAlt": "Charles Heller"
   },
   "Credibility": {
@@ -94,8 +94,8 @@
     "errorNetwork": "Netzwerkfehler. Bitte erneut versuchen oder an charles@charlesheller.dev mailen."
   },
   "Cv": {
-    "metaTitle": "CV",
-    "metaDescription": "Lebenslauf von Charles Heller — Senior Software Engineer mit Fokus auf Quality Engineering, Fullstack-Delivery sowie Test Data & Environment Management.",
+    "metaTitle": "Lebenslauf — Software Engineer & Quality Engineering",
+    "metaDescription": "Lebenslauf von Charles Heller — Software Engineer in Deutschland. Fullstack-Delivery, Playwright-Testautomation, Quality Engineering, Test Data & Environment Management.",
     "eyebrow": "Lebenslauf",
     "downloadPdf": "PDF herunterladen",
     "printPdf": "PDF drucken",

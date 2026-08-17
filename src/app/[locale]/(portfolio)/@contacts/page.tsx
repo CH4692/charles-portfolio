@@ -5,6 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import Title from '@/components/Title';
 import { getAvailability } from '@/data/experience';
 import { getReferences } from '@/data/proof';
+import { localizedPath } from '@/i18n/paths';
 import type { Locale } from '@/i18n/routing';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -52,7 +53,7 @@ export default async function Contact({ params }: Props) {
             LinkedIn
           </a>
           <a
-            href={`/${locale}/cv`}
+            href={localizedPath(locale, '/cv')}
             className="hover:border-primary focus-ring inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/5"
           >
             <FileText className="h-4 w-4" />

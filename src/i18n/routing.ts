@@ -7,5 +7,7 @@ export const defaultLocale: Locale = 'en';
 export const routing = defineRouting({
   locales,
   defaultLocale,
-  localePrefix: 'always',
+  // Keep default locale (EN) on unprefixed URLs so Google can keep ranking
+  // https://www.charlesheller.dev/ — DE lives under /de/...
+  localePrefix: 'as-needed',
 });

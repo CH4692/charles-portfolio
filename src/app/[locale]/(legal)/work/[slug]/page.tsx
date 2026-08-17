@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import BrowserMockup from '@/components/BrowserMockup';
 import { getProject, getProjects } from '@/data/projects';
 import { Link } from '@/i18n/navigation';
+import { absoluteUrl, languageAlternates } from '@/i18n/paths';
 import { type Locale, locales } from '@/i18n/routing';
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -26,11 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = loc as Locale;
   const t = await getTranslations({ locale, namespace: 'CaseStudy' });
   const project = getProject(slug, locale);
-
-  const languages = Object.fromEntries(
-    locales.map((l) => [l, `https://www.charlesheller.dev/${l}/work/${slug}`]),
-  ) as Record<string, string>;
-  languages['x-default'] = `https://www.charlesheller.dev/en/work/${slug}`;
+  const href = `/work/${slug}`;
 
   if (!project) {
     return { title: t('metaFallback') };
@@ -43,10 +40,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${project.title} · Charles Heller`,
       description: project.result,
       images: [project.image],
+      url: absoluteUrl(locale, href),
     },
     alternates: {
-      canonical: `https://www.charlesheller.dev/${locale}/work/${slug}`,
-      languages,
+      canonical: absoluteUrl(locale, href),
+      languages: languageAlternates(href),
     },
   };
 }

@@ -5,7 +5,7 @@ async function openMobileMenu(page: import('@playwright/test').Page) {
 }
 
 test('navigate to work section', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await openMobileMenu(page);
   await page.getByRole('button', { name: 'Work', exact: true }).click();
   await expect(page.locator('#work')).toBeVisible();
@@ -13,7 +13,7 @@ test('navigate to work section', async ({ page }) => {
 });
 
 test('navigate to approach section', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await openMobileMenu(page);
   await page.getByRole('button', { name: 'Approach', exact: true }).click();
   await expect(page.locator('#approach')).toBeVisible();
@@ -21,7 +21,7 @@ test('navigate to approach section', async ({ page }) => {
 });
 
 test('navigate to experience section', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await openMobileMenu(page);
   await page.getByRole('button', { name: 'Experience', exact: true }).click();
   await expect(page.locator('#experience')).toBeVisible();
@@ -29,7 +29,7 @@ test('navigate to experience section', async ({ page }) => {
 });
 
 test('navigate to stack section', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await openMobileMenu(page);
   await page.getByRole('button', { name: 'Stack', exact: true }).click();
   await expect(page.locator('#stack')).toBeVisible();
@@ -37,7 +37,7 @@ test('navigate to stack section', async ({ page }) => {
 });
 
 test('navigate to contact section', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await openMobileMenu(page);
   await page.locator('ul.bg-card').getByRole('button', { name: 'Get In Touch' }).click();
   await expect(page.locator('#contact')).toBeVisible();
@@ -45,7 +45,7 @@ test('navigate to contact section', async ({ page }) => {
 });
 
 test('View selected work Button', async ({ page }) => {
-  await page.goto('/en');
+  await page.goto('/');
   await page.getByRole('button', { name: 'View selected work', exact: true }).click();
   await expect(page.locator('#work')).toBeVisible();
   await expect(page.locator('#work')).toBeInViewport();
