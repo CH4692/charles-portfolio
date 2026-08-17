@@ -1,10 +1,21 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+
+import { Link, usePathname } from '@/i18n/navigation';
 
 export default function Logo({ width, height }: { width: number; height: number }) {
+  const pathname = usePathname();
+
+  function onClick() {
+    if (pathname === '/') {
+      document.getElementById('home')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   return (
     <div>
-      <Link href="/">
+      <Link href="/" onClick={onClick}>
         <Image
           alt="Logo"
           width={width}

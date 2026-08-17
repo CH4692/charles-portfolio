@@ -1,0 +1,158 @@
+{
+  "Meta": {
+    "titleDefault": "Charles Heller | Software Engineer & Test Automation · Germany",
+    "titleTemplate": "%s · Charles Heller",
+    "description": "Charles Heller is a software engineer in Germany specializing in Next.js, TypeScript, Playwright, and quality engineering. Portfolio, case studies, and CV at charlesheller.dev.",
+    "ogDescription": "Meet Charles Heller — software engineer combining enterprise QA with modern fullstack delivery. Next.js, TypeScript, Playwright. Based in Germany.",
+    "keywords": "Charles Heller, Charles Heller Software Engineer, Charles Heller Entwickler, Software Engineer Germany, Playwright, Next.js, TypeScript, Test Automation, Quality Engineering, Swiss Life, charlesheller.dev"
+  },
+  "Nav": {
+    "ariaLabel": "Main navigation",
+    "work": "Work",
+    "approach": "Approach",
+    "experience": "Experience",
+    "stack": "Stack",
+    "getInTouch": "Get In Touch"
+  },
+  "Footer": {
+    "tagline": "Quality-Driven Software Engineer",
+    "cv": "CV",
+    "pdf": "PDF",
+    "caseStudy": "Case study",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "contact": "Contact",
+    "legalAria": "Legal"
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "portfolio": "Portfolio",
+    "backToPortfolio": "← Portfolio",
+    "backToWork": "← Back to selected work",
+    "language": "Language",
+    "english": "English",
+    "german": "Deutsch"
+  },
+  "Home": {
+    "eyebrow": "Quality-Driven Software Engineer",
+    "headline": "I build reliable web apps — with testing, architecture, and automation from day one.",
+    "body": "Enterprise QA and test management experience meets modern fullstack delivery. Based in Germany · open to remote and hybrid roles.",
+    "viewWork": "View selected work",
+    "viewCv": "View CV",
+    "trustLine": "Charles Heller · Swiss Life · Playwright / TypeScript · Next.js",
+    "portraitAlt": "Charles Heller"
+  },
+  "Credibility": {
+    "ariaLabel": "Trusted by and built for",
+    "prefix": "Built with / for"
+  },
+  "Work": {
+    "eyebrow": "Selected Work",
+    "headline": "Products shipped end-to-end — with quality engineered in.",
+    "intro": "From seating and payments to booking flows and automation suites: architecture, delivery, and testability as one system.",
+    "result": "Result",
+    "problem": "Problem",
+    "approach": "Approach",
+    "testing": "Testing",
+    "readCaseStudy": "Read case study",
+    "liveDemo": "Live demo",
+    "github": "GitHub"
+  },
+  "Approach": {
+    "eyebrow": "How I Work",
+    "headline": "Quality is part of how the product gets built — not a phase at the end.",
+    "body": "This is the wedge I bring versus pure frontend profiles and pure manual QA: I ship features and design the systems that keep them reliable."
+  },
+  "Experience": {
+    "eyebrow": "Experience",
+    "headline": "From enterprise quality leadership to shipping modern software."
+  },
+  "Stack": {
+    "eyebrow": "Stack",
+    "headline": "Focused tools I use to ship and keep systems reliable."
+  },
+  "Contact": {
+    "eyebrow": "Get In Touch",
+    "headline": "Let's build something reliable together.",
+    "body": "Germany-based · remote-friendly. Tell me about the role or product — I usually reply within one business day.",
+    "cv": "CV",
+    "pdf": "PDF"
+  },
+  "WorkSection": {
+    "eyebrow": "Selected Work",
+    "intro": "Case studies that show how I ship software — and the quality systems that travel with it."
+  },
+  "ContactForm": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholder": "Role, timeline, or project context…",
+    "sending": "Sending…",
+    "send": "Send message",
+    "success": "Thanks — your message was sent. I usually reply within one business day.",
+    "errorGeneric": "Could not send your message. Please try again or email charles@charlesheller.dev.",
+    "errorNetwork": "Network error. Please try again or email charles@charlesheller.dev."
+  },
+  "Cv": {
+    "metaTitle": "CV — Software Engineer & Quality Engineering",
+    "metaDescription": "CV of Charles Heller — Software Engineer in Germany. Full-stack delivery, Playwright test automation, quality engineering, test data & environment management.",
+    "eyebrow": "Curriculum Vitae",
+    "downloadPdf": "Download PDF",
+    "printPdf": "Print PDF",
+    "onThisPage": "On this page",
+    "sectionsAria": "CV sections",
+    "about": "About me",
+    "whatIDo": "What I do",
+    "capabilitiesIntro": "Enterprise delivery depth meets hands-on product engineering — one integrated quality mindset.",
+    "experience": "Experience",
+    "selectedProjects": "Selected projects",
+    "projects": "Projects",
+    "skills": "Skills",
+    "technicalExpertise": "Technical expertise",
+    "howIWork": "How I work",
+    "howIWorkIntro": "The best software comes from combining engineering excellence with a strong quality mindset. Rather than separating development and testing, I integrate both into one engineering process.",
+    "howIWorkOutro": "This approach results in software that is easier to maintain, easier to scale, and more reliable for users.",
+    "interestedIn": "Currently interested in",
+    "contact": "Contact",
+    "getInTouch": "Get in touch",
+    "emailMe": "Email me",
+    "viewProject": "View project",
+    "openExternal": "Open",
+    "caseStudy": "Case study"
+  },
+  "CvPrint": {
+    "eyebrow": "Curriculum Vitae",
+    "summary": "Summary",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "approach": "Approach"
+  },
+  "CaseStudy": {
+    "metaLabel": "Case study",
+    "metaFallback": "Case study",
+    "liveDemo": "Live demo",
+    "github": "GitHub",
+    "proofPoints": "Proof points",
+    "problem": "Problem",
+    "approach": "Approach",
+    "challenge": "Challenge",
+    "tradeoff": "Trade-off",
+    "architecture": "Architecture decisions",
+    "testing": "How I tested this",
+    "owned": "What I owned",
+    "differently": "What I'd do differently",
+    "walkthrough": "Product walkthrough",
+    "stack": "Stack",
+    "discuss": "Discuss a similar project",
+    "moreWork": "More work"
+  },
+  "Legal": {
+    "impressumTitle": "Impressum",
+    "impressumDescription": "Impressum und Anbieterkennzeichnung für charlesheller.dev",
+    "datenschutzTitle": "Datenschutz",
+    "datenschutzDescription": "Datenschutzerklärung für charlesheller.dev",
+    "backHome": "← Back",
+    "germanBindingNote": "The legally binding text of this page is in German, as required under German law. The German version below is authoritative."
+  }
+}

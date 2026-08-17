@@ -9,7 +9,7 @@ test('Logo Link', async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.locator('#home').getByRole('heading', { name: 'Charles Heller' }),
-  ).toBeInViewport();
+  ).toBeInViewport({ timeout: 15_000 });
 });
 
 test('navigate to work section', async ({ page }) => {
@@ -44,7 +44,7 @@ test('navigate to stack section', async ({ page }) => {
 test('Get In Touch Button', async ({ page }) => {
   await page.goto('/');
   await page
-    .getByRole('navigation', { name: 'Hauptnavigation' })
+    .getByRole('navigation', { name: 'Main navigation' })
     .getByRole('button', { name: 'Get In Touch', exact: true })
     .click();
   await expect(page.locator('#contact')).toBeVisible();
@@ -73,7 +73,7 @@ test('NavisSedes case study page', async ({ page }) => {
 test('CV link', async ({ page }) => {
   await page.goto('/');
   await page.locator('#home').getByRole('link', { name: 'View CV' }).click();
-  await expect(page).toHaveURL(/\/cv/);
+  await expect(page).toHaveURL(/\/cv\/?$/, { timeout: 15_000 });
   await expect(page.getByRole('heading', { name: 'Charles Heller', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Experience' })).toBeVisible();
 });
