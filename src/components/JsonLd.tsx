@@ -1,10 +1,10 @@
-import { SITE_URL } from '@/i18n/paths';
+import { absoluteUrl, SITE_URL } from '@/i18n/paths';
 
 type Props = { locale: string };
 
 export default function JsonLd({ locale }: Props) {
   const isDe = locale === 'de';
-  const pageUrl = isDe ? `${SITE_URL}/de` : SITE_URL;
+  const pageUrl = absoluteUrl(isDe ? 'de' : 'en', '/');
 
   const person = {
     '@type': 'Person',
@@ -13,13 +13,10 @@ export default function JsonLd({ locale }: Props) {
     url: SITE_URL,
     image: `${SITE_URL}/me.png`,
     email: 'mailto:charles@charlesheller.dev',
-    jobTitle: isDe
-      ? 'Software Engineer · Quality Engineering · Testautomation'
-      : 'Software Engineer · Quality Engineering · Test Automation',
+    jobTitle: 'Software Engineer',
     description: isDe
-      ? 'Charles Heller ist Software Engineer in Deutschland. Er verbindet Enterprise Quality Engineering mit modernem Fullstack-Delivery (Next.js, TypeScript, Playwright).'
-      : 'Charles Heller is a software engineer based in Germany. He combines enterprise quality engineering with modern fullstack delivery (Next.js, TypeScript, Playwright).',
-    nationality: 'German',
+      ? 'Charles Heller ist Software Engineer in Deutschland mit Schwerpunkt QA Automation, Playwright, Next.js und AWS.'
+      : 'Charles Heller is a software engineer based in Germany specializing in QA Automation, Playwright, Next.js, and AWS.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'DE',
@@ -30,16 +27,16 @@ export default function JsonLd({ locale }: Props) {
     },
     sameAs: ['https://github.com/CH4692', 'https://www.linkedin.com/in/charles-heller-068b53233/'],
     knowsAbout: [
-      'TypeScript',
-      'Next.js',
-      'React',
+      'QA Automation',
       'Playwright',
+      'Next.js',
+      'TypeScript',
+      'AWS',
+      'Software Testing',
       'Test Automation',
       'Quality Engineering',
-      'Test Data Management',
-      'Test Environment Management',
+      'React',
       'Fullstack Development',
-      'Software Quality',
     ],
   };
 
@@ -47,6 +44,7 @@ export default function JsonLd({ locale }: Props) {
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
     name: 'Charles Heller',
+    alternateName: 'charlesheller.dev',
     url: SITE_URL,
     inLanguage: ['en', 'de'],
     publisher: { '@id': `${SITE_URL}/#person` },
@@ -55,11 +53,11 @@ export default function JsonLd({ locale }: Props) {
 
   const profilePage = {
     '@type': 'ProfilePage',
-    '@id': `${pageUrl}/#profile`,
+    '@id': `${pageUrl}#profile`,
     url: pageUrl,
     name: isDe
-      ? 'Charles Heller — Software Engineer Portfolio'
-      : 'Charles Heller — Software Engineer Portfolio',
+      ? 'Charles Heller — Software Engineer & QA Automation'
+      : 'Charles Heller — Software Engineer & QA Automation',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     mainEntity: { '@id': `${SITE_URL}/#person` },
     inLanguage: isDe ? 'de' : 'en',

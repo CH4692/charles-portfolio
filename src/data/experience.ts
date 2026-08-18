@@ -56,8 +56,8 @@ export const experienceByLocale = {
 } as const;
 
 export const bioByLocale = {
-  en: 'I build reliable software by combining enterprise quality engineering with modern full-stack development. Quality is designed into the product from day one — not verified at the end.',
-  de: 'Ich baue zuverlässige Software, indem ich Enterprise Quality Engineering mit modernem Fullstack-Development verbinde. Qualität wird von Tag eins ins Produkt designed — nicht am Ende geprüft.',
+  en: 'Charles Heller builds reliable software by combining enterprise quality engineering with modern full-stack development. Quality is designed into the product from day one — not verified at the end.',
+  de: 'Charles Heller baut zuverlässige Software, indem er Enterprise Quality Engineering mit modernem Fullstack-Development verbindet. Qualität wird von Tag eins ins Produkt designed — nicht am Ende geprüft.',
 } as const;
 
 export const availabilityByLocale = {

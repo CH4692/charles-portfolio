@@ -6,7 +6,7 @@ const cvProfileByLocale = {
     title: 'Senior Software Engineer · Quality Engineering · Test Data & Environment Management',
     location: 'Germany · remote-friendly',
     email: 'charles@charlesheller.dev',
-    website: 'https://www.charlesheller.dev',
+    website: 'https://charlesheller.dev',
     github: 'https://github.com/CH4692',
     linkedin: 'https://www.linkedin.com/in/charles-heller-068b53233/',
     summary:
@@ -21,7 +21,7 @@ const cvProfileByLocale = {
     title: 'Senior Software Engineer · Quality Engineering · Test Data & Environment Management',
     location: 'Deutschland · remote-freundlich',
     email: 'charles@charlesheller.dev',
-    website: 'https://www.charlesheller.dev',
+    website: 'https://charlesheller.dev',
     github: 'https://github.com/CH4692',
     linkedin: 'https://www.linkedin.com/in/charles-heller-068b53233/',
     summary:

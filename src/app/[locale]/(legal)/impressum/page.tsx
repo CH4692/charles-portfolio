@@ -2,16 +2,22 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/i18n/navigation';
+import { absoluteUrl, languageAlternates, SITE_URL } from '@/i18n/paths';
 import type { Locale } from '@/i18n/routing';
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: loc } = await params;
+  const locale = loc as Locale;
   const t = await getTranslations({ locale, namespace: 'Legal' });
   return {
     title: t('impressumTitle'),
     description: t('impressumDescription'),
+    alternates: {
+      canonical: absoluteUrl(locale, '/impressum'),
+      languages: languageAlternates('/impressum'),
+    },
   };
 }
 
@@ -58,8 +64,8 @@ export default async function ImpressumPage({ params }: Props) {
             </a>
             <br />
             Website:{' '}
-            <a href="https://www.charlesheller.dev" className="text-primary hover:underline">
-              www.charlesheller.dev
+            <a href={SITE_URL} className="text-primary hover:underline">
+              charlesheller.dev
             </a>
           </p>
         </section>
