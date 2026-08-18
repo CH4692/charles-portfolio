@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Manrope, Syne } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
@@ -5,7 +6,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import type { ReactNode } from 'react';
 
 import JsonLd from '@/components/JsonLd';
-import { absoluteUrl, languageAlternates } from '@/i18n/paths';
+import { absoluteUrl, indexableRobots, languageAlternates, SITE_URL } from '@/i18n/paths';
 import { type Locale, routing } from '@/i18n/routing';
 
 const manrope = Manrope({
@@ -29,14 +30,16 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Meta' });
   const pathLocale = locale as Locale;
   const pageUrl = absoluteUrl(pathLocale, '/');
+  const verificationCode = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
   return {
-    metadataBase: new URL('https://www.charlesheller.dev'),
+    metadataBase: new URL(SITE_URL),
+    applicationName: 'Charles Heller',
     title: {
       default: t('titleDefault'),
       template: t('titleTemplate'),
@@ -45,23 +48,19 @@ export async function generateMetadata({ params }: Props) {
     keywords: t('keywords')
       .split(',')
       .map((k) => k.trim()),
-    authors: [{ name: 'Charles Heller', url: 'https://www.charlesheller.dev' }],
+    authors: [{ name: 'Charles Heller', url: SITE_URL }],
     creator: 'Charles Heller',
     publisher: 'Charles Heller',
     category: 'technology',
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large' as const,
-        'max-snippet': -1,
-        'max-video-preview': -1,
-      },
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
     },
+    robots: indexableRobots(),
+    ...(verificationCode ? { verification: { google: verificationCode } } : {}),
     openGraph: {
-      type: 'website' as const,
+      type: 'website',
       locale: pathLocale === 'de' ? 'de_DE' : 'en_US',
       url: pageUrl,
       siteName: 'Charles Heller',
@@ -78,12 +77,12 @@ export async function generateMetadata({ params }: Props) {
           url: '/me.png',
           width: 720,
           height: 921,
-          alt: 'Portrait of Charles Heller',
+          alt: 'Charles Heller',
         },
       ],
     },
     twitter: {
-      card: 'summary_large_image' as const,
+      card: 'summary_large_image',
       title: t('titleDefault'),
       description: t('ogDescription'),
       images: ['/portfolio.png'],

@@ -6,7 +6,7 @@ Personal portfolio of a **Quality-Driven Software Engineer** — modern web deli
 
 ## Live
 
-https://www.charlesheller.dev/
+https://charlesheller.dev/
 
 ---
 
@@ -66,7 +66,7 @@ This builds the site and prints the ATS-friendly layout at `/cv/print` into `pub
 Email: charles@charlesheller.dev  
 LinkedIn: https://www.linkedin.com/in/charles-heller-068b53233/  
 GitHub: https://github.com/CH4692  
-CV: https://www.charlesheller.dev/cv
+CV: https://charlesheller.dev/cv
 
 ---
 

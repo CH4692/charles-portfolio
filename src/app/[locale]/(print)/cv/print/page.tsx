@@ -55,7 +55,7 @@ export default async function CvPrintPage({ params }: Props) {
             <p className="cv-print-contact">
               <a href={`mailto:${cvProfile.email}`}>{cvProfile.email}</a>
               <span aria-hidden>·</span>
-              <a href="https://www.charlesheller.dev">www.charlesheller.dev</a>
+              <a href="https://charlesheller.dev">charlesheller.dev</a>
               <span aria-hidden>·</span>
               <a href="https://github.com/CH4692">github.com/CH4692</a>
               <span aria-hidden>·</span>

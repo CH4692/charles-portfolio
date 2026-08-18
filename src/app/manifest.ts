@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Charles Heller — Software Engineer',
     short_name: 'Charles Heller',
     description:
-      'Portfolio of Charles Heller — software engineer focused on Next.js, TypeScript, Playwright, and quality engineering.',
+      'Portfolio of Charles Heller — Software Engineer & QA Automation. Playwright, Next.js, TypeScript, and AWS.',
     start_url: '/',
     display: 'browser',
     background_color: '#0b1220',

@@ -47,7 +47,7 @@ export default async function Projects({ params }: Props) {
                 >
                   <BrowserMockup
                     src={project.image}
-                    alt={`${project.title} product preview`}
+                    alt={`${project.title} — project by Charles Heller`}
                     url={project.live}
                     accent={project.accent}
                     accentSecondary={project.accentSecondary}

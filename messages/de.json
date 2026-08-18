@@ -1,10 +1,10 @@
 {
   "Meta": {
-    "titleDefault": "Charles Heller | Software Engineer & Testautomation · Deutschland",
-    "titleTemplate": "%s · Charles Heller",
-    "description": "Charles Heller ist Software Engineer in Deutschland — Next.js, TypeScript, Playwright und Quality Engineering. Portfolio, Case Studies und Lebenslauf auf charlesheller.dev.",
-    "ogDescription": "Charles Heller — Software Engineer mit Enterprise-QA und modernem Fullstack-Delivery. Next.js, TypeScript, Playwright. Standort Deutschland.",
-    "keywords": "Charles Heller, Charles Heller Software Engineer, Charles Heller Entwickler, Software Engineer Deutschland, Playwright, Next.js, TypeScript, Testautomation, Quality Engineering, Swiss Life, charlesheller.dev"
+    "titleDefault": "Charles Heller | Software Engineer & QA Automation",
+    "titleTemplate": "%s | Charles Heller",
+    "description": "Charles Heller — Software Engineer mit Schwerpunkt QA Automation, Playwright, Next.js und AWS. Portfolio, Projekte, Lebenslauf und Kontakt auf charlesheller.dev.",
+    "ogDescription": "Charles Heller — Software Engineer & QA Automation. Playwright, Next.js, TypeScript und AWS. Standort Deutschland.",
+    "keywords": "Charles Heller, Charles Heller Software Engineer, Charles Heller Software Developer, Charles Heller QA Automation, Charles Heller Test Automation, Charles Heller Playwright, Charles Heller Next.js, Charles Heller AWS, Charles Heller Portfolio, charlesheller.dev"
   },
   "Nav": {
     "ariaLabel": "Hauptnavigation",
@@ -36,7 +36,7 @@
   "Home": {
     "eyebrow": "Quality-Driven Software Engineer",
     "headline": "Ich baue zuverlässige Web-Apps — mit Testing, Architektur und Automation von Tag eins.",
-    "body": "Enterprise-QA und Testmanagement treffen moderne Fullstack-Delivery. Standort Deutschland · offen für Remote und Hybrid.",
+    "body": "Enterprise-QA und Testmanagement treffen moderne Fullstack-Delivery — QA Automation, Playwright, Next.js und AWS. Standort Deutschland · offen für Remote und Hybrid.",
     "viewWork": "Selected Work ansehen",
     "viewCv": "CV ansehen",
     "trustLine": "Charles Heller · Swiss Life · Playwright / TypeScript · Next.js",
@@ -65,18 +65,18 @@
   },
   "Experience": {
     "eyebrow": "Erfahrung",
-    "headline": "Von Enterprise-Quality-Leadership bis zum Shipping moderner Software."
+    "headline": "Über Charles Heller — von Enterprise-Quality-Leadership bis zum Shipping moderner Software."
   },
   "Stack": {
     "eyebrow": "Stack",
     "headline": "Fokussierte Tools, mit denen ich shippe und Systeme zuverlässig halte."
   },
   "Contact": {
-    "eyebrow": "Kontakt",
+    "eyebrow": "Kontakt zu Charles Heller",
     "headline": "Lass uns gemeinsam etwas Zuverlässiges bauen.",
     "body": "Standort Deutschland · remote-freundlich. Erzähl mir von der Rolle oder dem Produkt — ich antworte in der Regel innerhalb eines Werktags.",
-    "cv": "CV",
-    "pdf": "PDF"
+    "cv": "Lebenslauf von Charles Heller",
+    "pdf": "CV-PDF herunterladen"
   },
   "WorkSection": {
     "eyebrow": "Selected Work",
@@ -94,8 +94,8 @@
     "errorNetwork": "Netzwerkfehler. Bitte erneut versuchen oder an charles@charlesheller.dev mailen."
   },
   "Cv": {
-    "metaTitle": "Lebenslauf — Software Engineer & Quality Engineering",
-    "metaDescription": "Lebenslauf von Charles Heller — Software Engineer in Deutschland. Fullstack-Delivery, Playwright-Testautomation, Quality Engineering, Test Data & Environment Management.",
+    "metaTitle": "Lebenslauf — Software Engineer & QA Automation",
+    "metaDescription": "Lebenslauf von Charles Heller — Software Engineer in Deutschland. QA Automation, Playwright, Next.js, AWS, Quality Engineering und Fullstack-Delivery.",
     "eyebrow": "Lebenslauf",
     "downloadPdf": "PDF herunterladen",
     "printPdf": "PDF drucken",
@@ -129,7 +129,7 @@
     "approach": "Ansatz"
   },
   "CaseStudy": {
-    "metaLabel": "Case Study",
+    "metaLabel": "Case Study von Charles Heller",
     "metaFallback": "Case Study",
     "liveDemo": "Live-Demo",
     "github": "GitHub",
@@ -149,10 +149,15 @@
   },
   "Legal": {
     "impressumTitle": "Impressum",
-    "impressumDescription": "Impressum und Anbieterkennzeichnung für charlesheller.dev",
+    "impressumDescription": "Impressum und Anbieterkennzeichnung für charlesheller.dev — Charles Heller",
     "datenschutzTitle": "Datenschutz",
-    "datenschutzDescription": "Datenschutzerklärung für charlesheller.dev",
+    "datenschutzDescription": "Datenschutzerklärung für charlesheller.dev — Charles Heller",
     "backHome": "← Zurück",
     "germanBindingNote": "Der rechtlich verbindliche Text dieser Seite ist Deutsch, wie es das deutsche Recht verlangt. Maßgeblich ist die deutsche Fassung unten."
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "body": "Diese URL gehört nicht zum Portfolio von Charles Heller. Zurück zur Startseite, um weiterzulesen.",
+    "back": "Zurück zu charlesheller.dev"
   }
 }
