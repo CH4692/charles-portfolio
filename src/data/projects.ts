@@ -66,7 +66,7 @@ const projectDefs: ProjectBase[] = [
     gallery: ['/navissedes.jpg', '/navissedes-seats.png', '/navissedes-event.png'],
     tech: ['Next.js', 'Prisma', 'Neon', 'Stripe', 'Playwright', 'Vitest'],
     github: 'https://github.com/CH4692/NavisSedes',
-    live: 'https://navissedes.charlesheller.dev/',
+    live: 'https://konzerte.st-godehard-hildesheim.de/',
     image: '/navissedes-seats.png',
     heroImage: '/navissedes.jpg',
     accent: '#6b1a2e',
