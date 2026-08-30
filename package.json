@@ -1,5 +1,6 @@
 {
   "name": "charles-portfolio",
+  "packageManager": "npm@11.6.3",
   "version": "0.1.9",
   "private": true,
   "scripts": {
