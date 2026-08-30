@@ -1,0 +1,23 @@
+name: Self-hosted runner test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Check runner environment
+        run: |
+          echo "Self-hosted runner works"
+          echo "Hostname:"
+          hostname
+          echo "User:"
+          whoami
+          echo "Node:"
+          node --version
+          echo "npm:"
+          npm --version
+          echo "Docker:"
+          docker --version
